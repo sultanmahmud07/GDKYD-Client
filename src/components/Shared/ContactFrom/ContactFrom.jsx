@@ -40,7 +40,7 @@ const ContactForm = ({ locale, name, phone, email, product, note }) => {
       setIsLoading(false);
     }
   };
-  console.log("Local:", locale);
+  // console.log("Local:", locale);
   return (
     <form
       id="contact_form"
