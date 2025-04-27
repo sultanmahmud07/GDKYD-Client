@@ -164,7 +164,7 @@ nav {
   color: white;
 }
 .contain.absolute.top-0.left-0.w-full.h-full {
-  background: linear-gradient(90deg, #252b42, #00000026);
+  background: linear-gradient(90deg, #252b4200, #00000000);
 }
 
 #custom_part {

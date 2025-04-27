@@ -52,7 +52,11 @@ export const metadata = {
     "Face Mask Machine Supplier",
   ],
   verification: {
-    google: "h3e62bYsWEGHaX-2QCqFFXfOGtkjb5lMJ_FJpg0a6R0", // Paste the code from Google Search Console [1, 4, 19]
+    google: "h3e62bYsWEGHaX-2QCqFFXfOGtkjb5lMJ_FJpg0a6R0",
+    yandex: "5e6c720b2ded4231",
+    other: {
+      "baidu-site-verification" : ["codeva-OMSHA5bCUP"],
+    },
   },
 };
 
@@ -134,8 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             src="https://www.googletagmanager.com/ns.html?id=GTM-W3BPJSZR"
             height="0"
             width="0"
-            // style="display:none;visibility:hidden"
-            style={{display: "none", visibility: "hidden"}}
+            style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
       </body>
