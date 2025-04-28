@@ -1,8 +1,5 @@
-import Image from "next/image";
 import NavLink from "./NavLink";
 
-import logo from "../../../../public/assets/logo/logo.webp";
-import Link from "next/link";
 const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
 
   // console.log("HHHHHHHHHHHHHHHH:", allCategories);
@@ -34,7 +31,8 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
                         .replace(/\s+/g, "-") // Replace spaces with hyphens
                         .replace(/[^\w-]+/g, ""); // Remove all non-word characters
                     };
-                    const slug = generateSlug(service?.name_en);
+                    const slug = generateSlug(subService?.title_en);
+                    // console.log("Hellowwwwww:", service)
                     return (
                       <li
                         key={i}
