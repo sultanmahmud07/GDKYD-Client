@@ -8,9 +8,9 @@ const PageMenu = ({ menus }) => {
           <MenuLink
             key={i}
             href={menu?.link}
-            activeClassName="text-secondary font-semibold"
+            activeClassName="text-primary font-semibold"
             exact={menu?.link === "/"}
-            className="py-3 text-[#064a9b] md:py-5 px-6 md:px-10 inline-block border-l-2"
+            className="py-3 md:py-5 px-6 md:px-10 inline-block border-l-2 "
           >
             {menu?.name}
           </MenuLink>

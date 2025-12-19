@@ -46,7 +46,7 @@ const Subscribe = () => {
  };
  const t = useTranslations('Blog');
  return (
-   <div className="p-5 md:p-10 md:px-14 my-3 md:my-6 main_container bg-primary rounded-md">
+   <div className="p-5 md:p-10 md:px-14 my-3 md:my-6 main_container bg-secondary rounded-md">
      <div className="flex items-center flex-col md:flex-row gap-2 md:gap-5">
        <div className="w-full md:w-2/3">
          <h2 className="text-2xl md:text-3xl font-bold text-white my-2 md:my-4">
@@ -68,7 +68,7 @@ const Subscribe = () => {
                 />
                 <button
                   onClick={handleSubscribe}
-                  className="btn btn-sm md:btn-md btn-secondary join-item text-white"
+                  className="btn btn-sm md:btn-md btn-primary join-item text-white"
                 >
                    {t(`Subscribe.button`)}
                 </button>

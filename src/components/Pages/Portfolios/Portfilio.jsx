@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import PageMenu from "./PageMenu/PageMenu";
 import ImagePortfolio from "./ImagePortfolio/ImagePortfolio";
-import Honor from "../About/Honor/Honor";
+import Honor from "./Honor/Honor";
 import { getLocale } from "next-intl/server";
 import getHonors from "../../../lib/getHonors";
 
