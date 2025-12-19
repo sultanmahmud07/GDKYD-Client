@@ -43,6 +43,11 @@
   },
   "HomePage": {
     "title": "首页",
+    "Category": {
+      "title": "探索我们的高品质机械设备",
+      "description": "探索我们为高效生产而设计的全面自动化机械解决方案。",
+      "button": "查看所有类别"
+    },
     "CncMachined": {
       "title": "探索我们的顶级机械和生产解决方案"
     },

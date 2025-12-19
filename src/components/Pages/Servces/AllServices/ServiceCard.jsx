@@ -1,18 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BASEURL } from "../../../../../Constant";
-
+import { generateSlug } from '../../../../utils/generateSlug';
 
 const ServiceCard = ({ product, locale }) => {
-  // Function to convert a string into a URL-friendly slug
-const generateSlug = (text) => {
-  return text
-    .toLowerCase() // Convert to lowercase
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/[^\w-]+/g, ""); // Remove all non-word characters
-};
-  const slug = generateSlug(product?.title_en); // Generate the slug for the title
-  const link = `/product/${slug}/${product?._id}`;
+// Inside your map loop or component:
+const slug = generateSlug(product?.title_en); 
+const link = `/product/${slug}/${product?._id}`;
 //  console.log("ProductPPPPPPP:", product);
   return (
     <div className="w-full h-full border border-t-0">

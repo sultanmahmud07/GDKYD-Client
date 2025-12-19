@@ -43,6 +43,12 @@
   },
   "HomePage": {
     "title": "Home",
+    "Category": {
+      "title": "Explore Our Top-Quality Machinery",
+      "description": "Explore our comprehensive range of automated machinery solutions designed for efficiency.",
+      "button": "VIEW ALL CATEGORIES"
+
+    },
     "CncMachined": {
       "title": "Explore Our Top-Quality Machinery and Production Solutions"
     },

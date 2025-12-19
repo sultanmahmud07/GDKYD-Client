@@ -19,10 +19,10 @@ const CustomPartsBanner = () => {
 
         <p>Your browser does not support the video tag.</p>
       </video>
-     <div className="bg-[#00000054] relative z-10 py-20 md:py-32">
+     <div className="bg-[#00000054] relative z-10 py-20 md:py-32 lg:py-40">
      <div className="main_container">
         <div className="flex flex-col items-center justify-center gap-3">
-          <h2 className="text-center text-2xl md:text-3xl font-bold text-white my-4 md:my-7">
+          <h2 className="text-center text-2xl md:text-4xl lg:text-5xl font-bold text-white my-4 md:my-7">
             {t("CustomPart.title")}
           </h2>
           <Link href="/product" passHref>

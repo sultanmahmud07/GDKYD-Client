@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/Pages/Home/HomePage.jsx", "src/components/Pages/Home/TopProducts/TopProducts.jsx"  ],
   "exclude": [
     "node_modules"
   ]
