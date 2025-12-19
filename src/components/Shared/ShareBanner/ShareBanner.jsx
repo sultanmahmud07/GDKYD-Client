@@ -27,7 +27,7 @@ const ShareBanner = ({ bannerBg, title, link, des }) => {
               {link}
             </Link>
           </p>
-          <h2 className="text-xl md:text-2xl font-bold uppercase text-[#064a9b] ">
+          <h2 className="text-base md:text-2xl font-bold uppercase text-[#064a9b] ">
             {title}
           </h2>
         </div>

@@ -15,12 +15,7 @@ const AboutMenuTab = ({locale, ourPartners, ourHonors}) => {
       id: 1,
       name: "Partner",
       link: "/about/partner",
-    },
-    {
-      id: 1,
-      name: "Honor",
-      link: "/about/honor",
-    },
+    }
   ];
   // State to track the active tab
   const [activeTab, setActiveTab] = useState(menus[0]?.name);
@@ -34,8 +29,8 @@ const AboutMenuTab = ({locale, ourPartners, ourHonors}) => {
             key={i}
             onClick={() => setActiveTab(menu?.name)}
             className={`py-3 px-6 md:py-5 md:px-10 inline-block cursor-pointer border-l-2 transition-colors font-semibold ${activeTab === menu.name
-                ? "text-secondary border-secondary"
-                : "text-[#064a9b]  hover:text-secondary"
+                ? "text-primary border-primary"
+                : "text-secondary  hover:text-primary"
               }`}
           >
             {menu.name}
@@ -48,8 +43,6 @@ const AboutMenuTab = ({locale, ourPartners, ourHonors}) => {
         {activeTab === menus[0].name &&
           <WhoWeAre></WhoWeAre>}
         {activeTab === menus[1].name && <OurPartner  locale={locale} ourPartners={ourPartners}></OurPartner>}
-        {activeTab === menus[2].name && <Honor  locale={locale} honors={ourHonors}></Honor> }
-        {/* Add more content conditions as needed */}
       </div>
     </div>
   );

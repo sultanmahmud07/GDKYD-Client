@@ -16,7 +16,6 @@ export const metadata = {
   description: "Guangdong KYD Company specializes in precision machinery for non-woven products. Browse our range of automatic mask machines, medical gown machines, and more to optimize your manufacturing process.",
 };
 export default async function Page() {
-  const allProducts = await getProducts()
   const banner = await getBanners("services")
   const locale = await getLocale();
 
@@ -24,8 +23,6 @@ export default async function Page() {
     <div className="">
       <TopGap></TopGap>
       <ServiceBannerWrapper locale={locale} banner={banner?.data}></ServiceBannerWrapper>
-      {/* <ServiceMenu></ServiceMenu> */}
-      {/* <AllServices locale={locale} products={allProducts?.data}></AllServices> */}
       <ProductsPageLayout locale={locale}></ProductsPageLayout>
       <WintechStandard></WintechStandard>
       <MachinesCenter></MachinesCenter>
