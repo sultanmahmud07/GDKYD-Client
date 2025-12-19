@@ -2,7 +2,7 @@ import getProducts from '../../../lib/getProducts'
 import CategorySidebar from './CategorySidebar' // Renamed for clarity
 import ShowProducts from './ShowProducts'
 
-const ProductsPageLayout = async ({ locale }) => {
+const ProductsPageLayout = async ({ categoryId, locale }) => {
       const allProducts = await getProducts()
 
       return (
@@ -11,7 +11,7 @@ const ProductsPageLayout = async ({ locale }) => {
                         <div className="flex flex-col lg:flex-row gap-8 items-start">
                               {/* Left Sidebar - Sticky */}
                               <aside className="w-full lg:w-1/4 lg:sticky lg:top-28 z-10">
-                                    <CategorySidebar locale={locale} />
+                                    <CategorySidebar categoryId={categoryId} />
                               </aside>
 
                               {/* Right Content */}

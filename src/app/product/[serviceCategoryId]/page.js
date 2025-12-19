@@ -37,7 +37,7 @@ export default async function Page({ params }) {
         }
         link={"/product"}
       ></ServiceBanner>
-      <ProductsPageLayout locale={locale}></ProductsPageLayout>
+      <ProductsPageLayout categoryId={params?.serviceCategoryId} locale={locale}></ProductsPageLayout>
       <WintechStandard></WintechStandard>
       <MachinesCenter></MachinesCenter>
       <FAQ></FAQ>
