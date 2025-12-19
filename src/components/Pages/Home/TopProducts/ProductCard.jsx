@@ -42,7 +42,7 @@ const ProductCard = ({ product, locale, index = 0 }) => {
                   }}
             >
                   {/* Existing Card Structure handles the hover effects */}
-                  <div className="group relative flex flex-col h-full bg-white border border-gray-100 rounded overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:border-[#064a9b]/30 transition-all duration-300">
+                  <div className="group relative flex flex-col h-full bg-white border border-gray-100 rounded overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-300">
 
                         {/* --- Image Section --- */}
                         <div className="relative aspect-square bg-gray-50 p-4 overflow-hidden">

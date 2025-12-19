@@ -25,16 +25,21 @@
         "subMenu": ""
       },
       "menu4": {
+        "path": "/process",
+        "title": "Process",
+        "subMenu": ""
+      },
+      "menu5": {
         "path": "/portfolio",
         "title": "Portfolio",
         "subMenu": ""
       },
-      "menu5": {
+      "menu6": {
         "path": "/news",
         "title": "News",
         "subMenu": ""
       },
-      "menu6": {
+      "menu7": {
         "path": "/contact",
         "title": "Contact",
         "subMenu": ""

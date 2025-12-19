@@ -25,16 +25,21 @@
         "subMenu": ""
       },
       "menu4": {
+        "path": "/process",
+        "title": "工艺流程",
+        "subMenu": ""
+      },
+      "menu5": {
         "path": "/portfolio",
         "title": "作品集",
         "subMenu": ""
       },
-      "menu5": {
+      "menu6": {
         "path": "/news",
         "title": "消息",
         "subMenu": ""
       },
-      "menu6": {
+      "menu7": {
         "path": "/contact",
         "title": "联系我们",
         "subMenu": ""

@@ -1,17 +1,17 @@
 "use client";
 import { useTranslations } from "next-intl";
-import img1 from "../../../../../public/assets/services/processed/1.jpg";
-import img2 from "../../../../../public/assets/services/processed/2.jpg";
-import img3 from "../../../../../public/assets/services/processed/3.jpg";
-import img4 from "../../../../../public/assets/services/processed/4.jpg";
+import img1 from "../../../../public/assets/services/processed/1.jpg";
+import img2 from "../../../../public/assets/services/processed/2.jpg";
+import img3 from "../../../../public/assets/services/processed/3.jpg";
+import img4 from "../../../../public/assets/services/processed/4.jpg";
 import Image from "next/image";
 
-const ServiceProcesses = () => {
+const ProductProcesses = () => {
   const t = useTranslations('ServicePage');
   const keys = ['section1', 'section2', 'section3', 'section4'];
   const images = [img1, img2, img3, img4];
   return (
-    <div className="main_container py-5">
+    <div className="main_container py-5 md:py-16">
       <div className="flex flex-col gap-3 md:gap-5">
         {keys?.map((section, index) => {
           // const menuList = t(`Process.${section}.list`);
@@ -55,4 +55,4 @@ const ServiceProcesses = () => {
   );
 };
 
-export default ServiceProcesses;
+export default ProductProcesses;

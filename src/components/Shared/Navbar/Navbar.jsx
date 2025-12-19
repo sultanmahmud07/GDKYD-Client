@@ -54,7 +54,7 @@ const Navbar = ({ allCategories, locale }) => {
     setOpenSubMenus(!openSubMenus);
   };
   const t = useTranslations("AppLayout");
-  const keys = ["menu1", "menu2", "menu3", "menu4", "menu5", "menu6"];
+  const keys = ["menu1", "menu2", "menu3", "menu4", "menu5", "menu6", "menu7"];
 
   return (
     <nav

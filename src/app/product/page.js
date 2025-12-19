@@ -3,7 +3,7 @@ import ServiceMenu from "../../components/Pages/Servces/ServiceMenu";
 import AllServices from "../../components/Pages/Servces/AllServices/AllServices";
 import MachinesCenter from "../../components/Pages/Servces/MachinsCenter/MachinsCenter";
 import ServiceBannerWrapper from "../../components/Pages/Servces/ServiceBanner/ServiceBannerWraper";
-import ServiceProcesses from "../../components/Pages/Servces/ServiceProcesses/ServiceProcesses";
+import ProductsPageLayout from "../../components/Pages/Products/ProductsPageLayout";
 import WintechStandard from "../../components/Pages/Servces/WintechStandard/WintechStandard";
 import GetInTouch from "../../components/Shared/GetInTouch/GetInTouch";
 import TopGap from "../../components/Shared/TopGap/TopGap";
@@ -24,10 +24,9 @@ export default async function Page() {
     <div className="">
       <TopGap></TopGap>
       <ServiceBannerWrapper locale={locale} banner={banner?.data}></ServiceBannerWrapper>
-      {/* <PageMenu menus={menus}></PageMenu> */}
-      <ServiceMenu></ServiceMenu>
-      <AllServices locale={locale} products={allProducts?.data}></AllServices>
-      <ServiceProcesses></ServiceProcesses>
+      {/* <ServiceMenu></ServiceMenu> */}
+      {/* <AllServices locale={locale} products={allProducts?.data}></AllServices> */}
+      <ProductsPageLayout locale={locale}></ProductsPageLayout>
       <WintechStandard></WintechStandard>
       <MachinesCenter></MachinesCenter>
       <ServiceFAQ></ServiceFAQ>
