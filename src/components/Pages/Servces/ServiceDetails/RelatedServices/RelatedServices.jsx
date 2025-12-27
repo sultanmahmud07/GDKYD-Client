@@ -2,6 +2,7 @@ import Image from "next/image";
 import getSpecificCategory from "../../../../../lib/getSpecificCategory";
 import ServiceCard from "../../AllServices/ServiceCard";
 import notFoundImg from "../../../../../../public/assets/services/product-not-found.png";
+import ProductCard from "../../../Home/TopProducts/ProductCard";
 
 const RelatedServices = async ({ product, locale }) => {
   const relatedProducts = await getSpecificCategory(product?.category?.categoryId);
@@ -17,9 +18,14 @@ const RelatedServices = async ({ product, locale }) => {
     <div className="my-5 md:my-14">
       <div className="main_container">
         {filteredProducts?.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
             {filteredProducts?.map((product, i) => (
-              <ServiceCard key={i} locale={locale} product={product}></ServiceCard>
+                <ProductCard 
+                        key={product._id || i}
+                        locale={locale} 
+                        product={product} 
+                        index={i} 
+                    />
             ))}
           </div>
         ) : (

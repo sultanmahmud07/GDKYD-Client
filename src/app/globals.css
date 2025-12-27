@@ -216,6 +216,48 @@ nav {
 #page_menu:nth-child(1) {
   border-left: none !important;
 }
+
+
+/* Wrapper override for react-phone-number-input */
+.phone-input-custom {
+  background: #0000000d;
+  padding: 4px 12px;
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.phone-input-custom input {
+  background: transparent;
+  flex: 1;
+  outline: none;
+  border: none;
+  padding: 6px;
+}
+
+.phone-input-custom .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-input-custom .PhoneInputCountrySelect {
+  cursor: pointer;
+}
+.quote-form .phone-input-custom {
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.quote-form .number-label{
+  font-size: 14px;
+  padding: 0px;
+}
+
+ #contact_form .phone-input-custom input {
+  padding: 13px 6px !important;
+}
+
 /*============================================================
   <<<<<<<<<<<<< All media query css code  here  >>>>>>>>>>>>>>>
  =============================================================*/
@@ -228,17 +270,7 @@ nav {
   #banner_slider {
     height: 90vh;
   }
-  #service_banner_section {
-    /* height: 90vh; */
-  }
-  /* .side_title{
-    font-size: 26px;
-    margin: 28px 0;
-  }
-  .slick-prev, .slick-next {
-    display: none !important;
-  }
-  .slick-prev {
-    display: none !important;
-  } */
+#contact_form .phone-input-custom input {
+  padding: 5px 6px !important;
+}
 }

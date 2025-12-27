@@ -55,7 +55,7 @@ export const metadata = {
     google: "h3e62bYsWEGHaX-2QCqFFXfOGtkjb5lMJ_FJpg0a6R0",
     yandex: "5e6c720b2ded4231",
     other: {
-      "baidu-site-verification" : ["codeva-OMSHA5bCUP"],
+      "baidu-site-verification": ["codeva-OMSHA5bCUP"],
     },
   },
 };
@@ -110,15 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-W3BPJSZR');
 `}
         </Script>
-        {/* <Script>
-          {` window.okkiConfigs = window.okkiConfigs || [];
-  function okkiAdd() { okkiConfigs.push(arguments); };
-  okkiAdd("analytics", { siteId: "74988-19919", gId: "" });`}
-        </Script>
-        <Script
-          async
-          src="//tfile.xiaoman.cn/okki/analyze.js?id=74988-19919-"
-        ></Script> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

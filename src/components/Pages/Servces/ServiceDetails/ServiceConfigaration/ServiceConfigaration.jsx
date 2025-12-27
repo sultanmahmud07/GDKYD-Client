@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 
 const ServiceConfigaration = ({product, locale}) => {
   const t = useTranslations('ServicePage');
+  const isEn = locale === "en";
   return (
     <div className="my-5 md:my-14">
      <div className="main_container">
@@ -20,12 +21,24 @@ const ServiceConfigaration = ({product, locale}) => {
           className="w-full"
         />
         </div>
-        <div className="details_con flex flex-col md:justify-between gap-2 md:gap-5 w-full md:w-3/5">
-        <h4 className="text-[#333333] text-xl md:text-2xl font-semibold my-2">
-          {/* CNC Machining Services */}
-          {locale == "en" ? product?.title_en : product?.title_cn}
-          </h4>
-        <p className="text-sm md:text-base">{locale == "en" ? product?.description_en : product?.description_cn}</p>
+        <div className="details_con flex flex-col md:justify-between gap-2 md:gap-3 w-full md:w-3/5">
+          {/* Category Label (Optional visual) */}
+              <div className="inline-block px-3 py-1 bg-blue-50 text-[#064a9b] text-xs font-bold uppercase tracking-wider rounded-full mb-4 w-fit">
+                {t('ServiceDetail.productInfo') || "Service Overview"}
+              </div>
+
+              {/* Title */}
+              <h1 className="text-3xl md:text-4xl font-extrabold text-[#252B42] leading-tight">
+                {isEn ? product?.title_en : product?.title_cn}
+              </h1>
+
+              {/* Description Divider */}
+              <div className="w-20 h-1 bg-gray-200 rounded-full mb-6"></div>
+
+              {/* Description Text */}
+              <div className="text-gray-600 text-base md:text-lg leading-relaxed ">
+                 {isEn ? product?.description_en : product?.description_cn}
+              </div>
         <DetailImages productImage={product?.images}></DetailImages>
         </div>
        </div>

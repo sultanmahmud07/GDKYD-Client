@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdSpeed, MdArrowForward } from "react-icons/md";
@@ -7,6 +7,7 @@ import { BsCpu } from "react-icons/bs";
 // 1. Import motion
 import { motion } from "framer-motion";
 import { generateSlug } from '../../../../utils/generateSlug';
+import SendQuoteModal from '../../Products/SendQuoteModal';
 
 // 2. Accept index prop for staggered animation
 const ProductCard = ({ product, locale, index = 0 }) => {
@@ -14,6 +15,7 @@ const ProductCard = ({ product, locale, index = 0 }) => {
       const isEn = locale === 'en';
       const title = isEn ? product.title_en : product.title_cn;
       const categoryTitle = isEn ? product.category?.title_en : product.category?.title_cn;
+      const [showModal, setShowModal] = useState(false)
 
       // 2. Safe Data Access (Configs)
       const speed = product.configurations?.["Production Speed"] || "N/A";
@@ -22,7 +24,7 @@ const ProductCard = ({ product, locale, index = 0 }) => {
 
       // 3. Image Logic (Main + Hover Image)
       const mainImage = product.images?.[0] || '/placeholder.jpg';
-      const hoverImage = product.images?.[1] || mainImage; 
+      const hoverImage = product.images?.[1] || mainImage;
 
       // Generate Slug and Link
       const slug = generateSlug(product?.title_en);
@@ -35,10 +37,10 @@ const ProductCard = ({ product, locale, index = 0 }) => {
                   initial={{ opacity: 0, y: 50 }} // Start invisible and lower
                   whileInView={{ opacity: 1, y: 0 }} // Animate to visible and natural position
                   viewport={{ once: true, margin: "-50px" }} // Trigger slightly before it enters view
-                  transition={{ 
-                        duration: 0.5, 
+                  transition={{
+                        duration: 0.5,
                         delay: index * 0.1, // Stagger effect based on index
-                        ease: "easeOut" 
+                        ease: "easeOut"
                   }}
             >
                   {/* Existing Card Structure handles the hover effects */}
@@ -91,10 +93,7 @@ const ProductCard = ({ product, locale, index = 0 }) => {
                                     </div>
                               </div>
 
-                              {/* --- Action Buttons --- */}
-                              <div className="flex gap-3 mt-auto">
-                                    {/* Details Button */}
-                                    {/* FIX: Updated to use the SEO friendly 'link' variable */}
+                              <div className="grid grid-cols-2 gap-2 md:gap-3">
                                     <Link href={link} className="flex-1">
                                           <button className="w-full py-1 md:py-2.5 rounded-lg border border-gray-200 text-gray-700 text-xs font-semibold hover:border-[#064a9b] hover:text-[#064a9b] transition-all flex items-center justify-center gap-2 group-hover/btn">
                                                 {isEn ? "Details" : "详情"}
@@ -102,15 +101,14 @@ const ProductCard = ({ product, locale, index = 0 }) => {
                                           </button>
                                     </Link>
 
-                                    {/* Quote Button */}
-                                    <Link href="/contact" className="flex-1">
-                                          <button className="w-full py-1 md:py-2.5 rounded-lg bg-[#064a9b] text-white text-xs font-bold shadow-md hover:bg-[#053a7a] hover:shadow-lg transition-all">
-                                                {isEn ? "Get Quote" : "询价"}
-                                          </button>
-                                    </Link>
+                                    <button onClick={() => setShowModal(true)} className="w-full py-1 md:py-2.5 rounded-lg bg-[#064a9b] text-white text-xs font-bold shadow-md hover:bg-[#053a7a] hover:shadow-lg transition-all">
+                                          {isEn ? "Get Quote" : "询价"}
+                                    </button>
+
                               </div>
                         </div>
                   </div>
+                  {showModal && <SendQuoteModal locale={locale} product={product} onClose={() => setShowModal(false)} />}
             </motion.div>
       );
 };
