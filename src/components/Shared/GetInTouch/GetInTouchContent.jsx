@@ -20,7 +20,7 @@ const GetInTouchContent = ({ translations, formLabels, locale }) => {
   };
 
   return (
-    <section className="py-12 md:py-24 bg-[#F3F4F6]">
+    <section className="py-12 md:py-24 ">
       <div className="main_container">
         
         <motion.div 

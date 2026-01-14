@@ -26,21 +26,20 @@ export default async function Page() {
   const teamMembers = await getAllTeamMember()
   const certificatesData = await getCertificates()
   const partnerData = await getPartners()
-  const honorsData = await getHonors()
   const locale = await getLocale();
 // console.log("certificatesData:", partnerData.data);
   return (
     <div className="">
       <TopGap></TopGap>
       <AboutBanner  locale={locale} banner={banner?.data}></AboutBanner>
-      <AboutMenuTab locale={locale} ourPartners={partnerData?.data} ourHonors={honorsData?.data}></AboutMenuTab>
+      <AboutMenuTab locale={locale} ourPartners={partnerData?.data}></AboutMenuTab>
       <WeDo></WeDo>
       <Facilities></Facilities>
       <OurTeam locale={locale} ourTeamMembers={teamMembers?.data}></OurTeam>
       <Certificates locale={locale} certificatesData={certificatesData?.data}></Certificates>
       <ClientTestimonial></ClientTestimonial>
-      <GetInTouch locale={locale}></GetInTouch>
       <FindProducts></FindProducts>
+      <GetInTouch locale={locale}></GetInTouch>
     </div>
   );
 }

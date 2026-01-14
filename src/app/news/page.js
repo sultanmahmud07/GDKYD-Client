@@ -20,8 +20,8 @@ export default async function Page() {
       <TopGap></TopGap>
      <BlogBanner locale={locale} banner={banner?.data}></BlogBanner>
       <BlogShow blogs={blogsData.data} locale={locale}></BlogShow>
-      <Subscribe></Subscribe>
       <GetInTouch locale={locale}></GetInTouch>
+      <Subscribe></Subscribe>
     </div>
   );
 }

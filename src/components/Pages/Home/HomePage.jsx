@@ -1,9 +1,9 @@
 import Banner from "./Banner/Banner"
 import FindProducts from "../../Shared/FindProducts/FindProducts"
 import GetInTouch from "../../Shared/GetInTouch/GetInTouch"
-import CngMachines from "./CNGMachins/CngMachins"
 import CounterSection from "./CounterSection/CounterSection"
 import CustomPartsBanner from "./CustomPartsBanner/CustomPartsBanner"
+import Partners from "./Partner/Partner"
 import FAQ from "./FAQ/FAQ"
 import ProductCategory from "./Category/ProductCategory"
 import FeaturedVideoShow from "./FeaturedVideos/FeaturedVideoShow"
@@ -14,10 +14,12 @@ import getHomePageData from '../../../lib/getHomePageData';
 import getHomeBannerData from '../../../lib/getHomeBannerData';
 import { getLocale } from "next-intl/server"
 import TopProducts from "./TopProducts/TopProducts"
+import getPartners from "../../../lib/getPartners"
 
 const HomePage = async () => {
   const homeBanner = await getHomeBannerData()
   const homePageData = await getHomePageData()
+    const partnerData = await getPartners()
   const locale = await getLocale();
   // console.log("Home_Page_Data:",homeBanner?.data)
   return (
@@ -32,9 +34,10 @@ const HomePage = async () => {
       <HowWorks></HowWorks>
       <FeaturedVideoShow locale={locale} videos={homePageData?.data?.featured_video}></FeaturedVideoShow>
       <ClientTestimonial></ClientTestimonial>
+      <FindProducts></FindProducts>
       <FAQ></FAQ>
       <GetInTouch locale={locale}></GetInTouch>
-      <FindProducts></FindProducts>
+      <Partners locale={locale} ourPartners={partnerData?.data}></Partners>
     </div>
   )
 }

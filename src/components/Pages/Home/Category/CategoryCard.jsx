@@ -26,8 +26,6 @@ const CategoryCard = ({ part, locale, index = 0 }) => {
     >
       <Link href={`/category/${part?.slug || "slug-for-category"}`} className="block h-full">
         <div className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-          
-          {/* Image Container with Zoom Effect */}
           <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
             <Image
               width={500}

@@ -39,8 +39,8 @@ const HonorContent = ({ title, honors, locale }) => {
   };
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="main_container px-4">
+    <section className="py-8  md:py-14 bg-white">
+      <div className="main_container">
         
         {/* Title */}
         <div className=" mb-6 md:mb-10">

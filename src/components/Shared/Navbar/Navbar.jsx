@@ -65,7 +65,7 @@ const Navbar = ({ allCategories, locale }) => {
       }`}
     >
       <div className="hidden md:block">
-        <div className="w-full grid grid-cols-2 py-2 md:py-3 px-10 bg-[#064a9b]">
+        <div className="w-full grid grid-cols-2 py-1 md:py-1 px-10 bg-secondary">
           <div className="flex items-center justify-start gap-8 w-full">
             <a
               target="_blank"
@@ -94,21 +94,21 @@ const Navbar = ({ allCategories, locale }) => {
             <a
               target="blank"
               href="https://x.com/KYD_Precision"
-              className="flex items-center justify-center hover:text-secondary transition text-white  text-sm md:text-base rounded-full "
+              className="flex items-center justify-center p-2 hover:bg-primary transition text-white  text-sm md:text-base rounded-full "
             >
               <FaSquareXTwitter />
             </a>
             <a
               target="blank"
               href="https://www.facebook.com/guangdongkyd"
-              className="flex items-center justify-center hover:text-secondary transition text-white  text-sm md:text-base rounded-full "
+              className="flex items-center justify-center p-2 hover:bg-primary transition text-white  text-sm md:text-base rounded-full "
             >
               <FaFacebookF />
             </a>
             <a
               target="blank"
               href="https://www.linkedin.com/company/guangdong-kyd-medical-mask-machinery/"
-              className="flex items-center justify-center hover:text-secondary transition text-white  text-sm md:text-base rounded-full "
+              className="flex items-center justify-center p-2 hover:bg-primary transition text-white  text-sm md:text-base rounded-full "
             >
               <FaLinkedinIn />
             </a>
@@ -117,7 +117,7 @@ const Navbar = ({ allCategories, locale }) => {
               rel="noopener noreferrer"
               // href="https://wa.me/+86-13902617335"
                 href="https://api.whatsapp.com/send?phone=+86-13902617335&text=Hello,%20I'm%20interested%20in%20your%20services.%20Could%20you%20share%20more%20details?"
-              className="flex items-center justify-center hover:text-secondary transition text-white text-sm md:text-base rounded-full"
+              className="flex items-center justify-center p-2 hover:bg-primary transition text-white text-sm md:text-base rounded-full"
             >
               <BsWhatsapp />
             </a>

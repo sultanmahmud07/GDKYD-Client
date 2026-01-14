@@ -1,90 +1,119 @@
 import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
+import { IoIosArrowForward, IoMdTime, IoMdCalendar } from "react-icons/io";
 import Subscribe from "../../Contact/Subscribe/Subscribe";
 import RelatedBlogs from "../RelatadeBlog/RelatedBlogs";
 import GetInTouch from "../../../Shared/GetInTouch/GetInTouch";
 import getSingleBlog from "../../../../lib/getSingleBlog";
 import getAllBlogs from "../../../../lib/getAllBlogs";
-import { BASEURL } from "../../../../../Constant";
 import { getLocale } from "next-intl/server";
+import SidebarNews from "./SidebarNews"; // New Component below
 
-const BlogDetails = async ({id}) => {
-  const blog = await getSingleBlog(id);
-  const relatedBlogs = await getAllBlogs()
+const BlogDetails = async ({ slug }) => {
+  const blog = await getSingleBlog(slug);
+  const allBlogs = await getAllBlogs();
   const locale = await getLocale();
-  const isBlog = id;
+  const isEn = locale === "en";
 
-  // Filter out the current Blog from related blogs
-  const filterBlogs = relatedBlogs?.data?.filter(
-    (relatedBlog) => relatedBlog?._id !== isBlog
+  // 1. Filter out the current blog
+  const currentId = blog?.data?._id;
+  const otherBlogs = allBlogs?.data?.filter(
+    (item) => item?._id !== currentId
   );
-  // console.log("blogGGGGGGGGGGGGGGGGGGG:", blog);
+
+  // 2. Logic: Top 5 for Sidebar, Rest for Bottom
+  const sidebarBlogs = otherBlogs?.slice(0, 5) || [];
+  const remainingBlogs = otherBlogs?.slice(5) || [];
+
+  // Helper for content rendering
+  const content = isEn 
+    ? blog?.data?.description_en 
+    : blog?.data?.description_cn;
+  
+  const title = isEn 
+    ? blog?.data?.name_en 
+    : blog?.data?.name_cn;
+
   return (
-    <div>
-      <div className="blog_detail_top bg-[#064a9b1A] py-3 md:py-5">
+    <div className="bg-white">
+      
+      {/* --- Header / Breadcrumb --- */}
+      <div className="bg-[#F8F9FA] border-b border-gray-100 py-4 md:py-6">
         <div className="main_container">
-          <p className="flex items-center gap-2 md:font-semibold text-sm">
-            <span>Home</span>
-            <span>
-              <IoIosArrowForward />
-            </span>
-            <Link className="capitalize" href={"/blog"}>
-              Blog
-            </Link>
-            <span>
-              <IoIosArrowForward />
-            </span>
-            <span>{"Blog single details"}</span>
-          </p>
-          <h2 className="text-xl md:text-2xl font-bold uppercase text-[#064a9b] ">
-            {locale == "en" ? blog?.data?.name_en : blog?.data?.name_cn}
-          </h2>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 font-medium mb-3">
+            <Link href="/" className="hover:text-[#064a9b]">Home</Link>
+            <IoIosArrowForward className="text-gray-400" />
+            <Link href="/news" className="hover:text-[#064a9b]">News</Link>
+            <IoIosArrowForward className="text-gray-400" />
+            <span className="text-[#064a9b] line-clamp-1 max-w-[200px]">{title}</span>
+          </div>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#252B42] leading-tight">
+            {title}
+          </h1>
+          
+          {/* Date / Meta */}
+          <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
+             <div className="flex items-center gap-1.5">
+                <IoMdCalendar className="text-[#064a9b] text-lg" />
+                <span>{new Date(blog?.data?.createdAt || Date.now()).toLocaleDateString()}</span>
+             </div>
+             <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+             <span>{isEn ? "Industry News" : "行业新闻"}</span>
+          </div>
         </div>
       </div>
-      <div className="main_container">
-        <div className="py-4 md:py-7">
-          <Image
-            width={1000}
-            height={600}
-            src={`${blog?.data?.heading_image}`}
-            // alt={locale == "en" ? product?.title_en : product?.title_en}
-            alt={"Blog detail image here.."}
-            className="w-full"
-          />
-        </div>
-        {locale == "en" ? (
-          <div className="blog_para">
-            {blog?.data?.description_en?.map((des, i) => {
-              return (
+
+      {/* --- Main Content Area --- */}
+      <div className="main_container py-8 md:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
+          
+          {/* LEFT: Article Content (8 Cols) */}
+          <div className="lg:col-span-8">
+            
+            {/* Featured Image */}
+            <div className="relative w-full bg-gray-100 rounded-2xl overflow-hidden mb-8 border border-gray-100 shadow-sm">
+              <Image
+                width={1000}
+                height={600}
+                src={blog?.data?.heading_image}
+                alt={title}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+
+            {/* Article Text */}
+            <div className="blog_content">
+              {content?.map((des, i) => (
                 <p
                   key={i}
-                  className="text-sm md:text-base text-[#606060] my-3 md:my-8"
+                  className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 last:mb-0 font-light"
                 >
                   {des}
                 </p>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        ) : (
-          <div className="blog_para">
-            {blog?.data?.description_cn?.map((des, i) => {
-              return (
-                <p
-                  key={i}
-                  className="text-sm md:text-base text-[#606060] my-3 md:my-8"
-                >
-                  {des}
-                </p>
-              );
-            })}
+
+          {/* RIGHT: Sidebar (4 Cols) */}
+          <div className="lg:col-span-4">
+             <div className="sticky top-24">
+                <SidebarNews blogs={sidebarBlogs} locale={locale} />
+             </div>
           </div>
-        )}
-        
+
+        </div>
       </div>
-      <RelatedBlogs locale={locale} blogs={filterBlogs}></RelatedBlogs>
-      <Subscribe></Subscribe>
-      <GetInTouch locale={locale}></GetInTouch>
+
+      {/* --- Bottom: Remaining Blogs --- */}
+      {remainingBlogs.length > 0 && (
+         <div className="border-t border-gray-100 bg-[#F8FAFB]">
+            <RelatedBlogs locale={locale} blogs={remainingBlogs} />
+         </div>
+      )}
+
+      <GetInTouch locale={locale} />
+      <Subscribe />
     </div>
   );
 };

@@ -64,19 +64,19 @@ const HowWorksContent = ({ title, steps, imageSrc }) => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="absolute inset-0 bg-[#064a9b]/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+          <div className="absolute inset-0 group-hover:bg-transparent transition-colors duration-500 z-10" />
           <Image
             width={1000}
             height={800}
             src={imageSrc}
             alt="How it works process"
-            className="w-full h-full  transform transition-transform duration-700 group-hover:scale-105"
+            className="w-full pt-3 md:pt-24 lg:pt-44 transform transition-transform duration-700 group-hover:scale-105"
           />
         </motion.div>
 
         {/* --- Right Side: Process Steps --- */}
         <motion.div
-          className="flex flex-col gap-4"
+          className="flex flex-col gap-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

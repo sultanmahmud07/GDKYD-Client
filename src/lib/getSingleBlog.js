@@ -3,7 +3,7 @@ import { BASEURL } from "../../Constant";
 export default async function getSingleBlog(props) {
     // console.log(props)
     const result = await fetch(
-        `${BASEURL}/blog/${props}`
+        `${BASEURL}/blog/slug/${props}`
         ,{  cache: 'no-store' }
         )
 

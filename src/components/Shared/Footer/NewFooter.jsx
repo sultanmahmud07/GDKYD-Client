@@ -97,7 +97,7 @@ const NewFooter = () => {
   return (
     <section
       id="footer"
-      className="bg-[#064a9b] text-xs md:text-base mt-10  md:mt-20 relative  md:mb-0"
+      className="bg-secondary text-xs md:text-base mt-10  md:mt-20 relative  md:mb-0"
     >
       <div className="shap relative top-[-2px]  left-0 w-full">
         <Image src={shap} alt="logo" width={800} className="w-full" />
@@ -120,13 +120,13 @@ const NewFooter = () => {
                 </span>
               </p>
               <p className="flex items-center gap-3 text-[#FFFFFFE5]">
-                <span className="text-xl font-semibold text-secondary">
+                <span className="text-xl font-semibold text-primary">
                   <MdOutlinePhonelinkRing />
                 </span>
                 <span className="text-xs md:text-sm">0769-87937128</span>
               </p>
               <p className="flex items-center gap-3 text-[#FFFFFFE5]">
-                <span className="text-xl font-semibold text-secondary">
+                <span className="text-xl font-semibold text-primary">
                   <MdOutlineEmail />
                 </span>
                 <span className="lowercase text-xs md:text-sm">
@@ -182,7 +182,7 @@ const NewFooter = () => {
                 />
                 <button
                   onClick={handleSubscribe}
-                  className="btn btn-sm btn-secondary join-item text-white"
+                  className="btn btn-sm btn-primary join-item text-white"
                 >
                   Subscribe
                 </button>
@@ -208,7 +208,7 @@ const NewFooter = () => {
                 }
                 target="blank"
               >
-                <span className="flex items-center justify-center bg-secondary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#3b5998] hover:scale-110 transition duration-300 ease-in-out">
+                <span className="flex items-center justify-center bg-primary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#3b5998] hover:scale-110 transition duration-300 ease-in-out">
                   <FaFacebookF />
                 </span>
               </Link>
@@ -217,14 +217,14 @@ const NewFooter = () => {
                   "https://www.linkedin.com/company/guangdong-kyd-medical-mask-machinery/"
                 }
                 target="blank"
-                className="flex items-center justify-center bg-secondary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#0077b5] hover:scale-110 transition duration-300 ease-in-out"
+                className="flex items-center justify-center bg-primary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#0077b5] hover:scale-110 transition duration-300 ease-in-out"
               >
                 <FaLinkedinIn />
               </Link>
               <Link
                 href={"https://x.com/KYD_Precision"}
                 target="blank"
-                className="flex items-center justify-center bg-secondary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#1da1f2] hover:scale-110 transition duration-300 ease-in-out"
+                className="flex items-center justify-center bg-primary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#1da1f2] hover:scale-110 transition duration-300 ease-in-out"
               >
                 <FaSquareXTwitter />
               </Link>
@@ -233,7 +233,7 @@ const NewFooter = () => {
                   "https://www.tiktok.com/@kyd_precision_machinery"
                 }
                 target="blank"
-                className="flex items-center justify-center bg-secondary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#ff0000] hover:scale-110 transition duration-300 ease-in-out"
+                className="flex items-center justify-center bg-primary text-white h-8 w-8 text-lg rounded-full font-bold shadow hover:bg-[#ff0000] hover:scale-110 transition duration-300 ease-in-out"
               >
                 <IoLogoTiktok />
               </Link>

@@ -3,9 +3,8 @@ import TopGap from "../../../components/Shared/TopGap/TopGap";
 import getSingleBlog from "../../../lib/getSingleBlog";
 
 export async function generateMetadata({ params }) {
-  // read route params
-  const id = (await params).slag
-  const blog = await getSingleBlog(id);
+  const slug = (await params).slug
+  const blog = await getSingleBlog(slug);
  
   return {
     title: blog?.data?.name_en,
@@ -15,11 +14,10 @@ export async function generateMetadata({ params }) {
  
 
 export default function Page({params}) {
-  // console.log("VVVVVVVVVVVVVVVV:", params.slag);
   return (
     <div className="">
       <TopGap></TopGap>
-      <BlogDetails id={params?.slag}></BlogDetails>
+      <BlogDetails slug={params?.slug}></BlogDetails>
     </div>
   );
 }

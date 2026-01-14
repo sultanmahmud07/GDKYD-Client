@@ -5,6 +5,13 @@ const VideoPortfolio =  ({locale, videos}) => {
   return (
     <div className="my-5 md:my-14">
       <div className="main_container">
+          {/* Title */}
+        <div className=" mb-6 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#252B42]">
+            {"Video Portfolio"}
+          </h2>
+          <div className="h-1 w-20 bg-[#064a9b] rounded-full"></div>
+        </div>
         <div className="w-full md:w-full grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5">
           {videos?.map((video, i) => {
             return (
@@ -15,7 +22,7 @@ const VideoPortfolio =  ({locale, videos}) => {
                   src={video?.link}
                   title="Left Side Video"
                   frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               ) : (

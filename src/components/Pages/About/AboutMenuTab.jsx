@@ -2,9 +2,8 @@
 import { useState } from "react";
 import WhoWeAre from "./WhoWeAre/WhoWeAre";
 import OurPartner from "./OurPartner/OurPartner";
-import Honor from "../Portfolios/Honor/Honor";
 
-const AboutMenuTab = ({ locale, ourPartners, ourHonors }) => {
+const AboutMenuTab = ({ locale, ourPartners }) => {
   const menus = [
     {
       id: 1,
