@@ -4,7 +4,7 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
 
   // console.log("HHHHHHHHHHHHHHHH:", allCategories);
   return (
-    <div className="sub_nav_manu main_container rounded-b-md py-6 z-10 shadow-lg absolute top-28 left-0 right-0 w-full h-auto bg-secondary p-1 text-white ">
+    <div className="sub_nav_manu main_container rounded-b-md py-6 z-10 shadow-lg absolute top-[6.7rem] left-0 right-0 w-full h-auto bg-secondary p-1 text-white ">
       <div className="">
         <div className="relative">
           <span className="absolute z-50 top-[-30px] left-1/2  rotate-45  bg-[#465267] h-5 w-5 "></span>
