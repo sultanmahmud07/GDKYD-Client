@@ -3,7 +3,7 @@ import { BASEURL } from "../../Constant";
 export default async function getSpecificProduct(props) {
     // console.log(props)
     const result = await fetch(
-        `${BASEURL}/product/${props}`
+        `${BASEURL}/product/slug/${props}`
         ,{  cache: 'no-store' }
         )
 

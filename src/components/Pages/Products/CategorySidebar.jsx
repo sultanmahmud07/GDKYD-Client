@@ -3,7 +3,7 @@ import getAllCategories from "../../../lib/getAllCategories";
 import Link from "next/link";
 import { MdSearch, MdKeyboardArrowRight, MdPhone, MdEmail, MdCategory } from "react-icons/md";
 
-const CategorySidebar = async ({ categoryId }) => {
+const CategorySidebar = async ({ slug }) => {
     const allCategories = await getAllCategories();
     const locale = await getLocale();
     const isEn = locale === "en";
@@ -36,37 +36,32 @@ const CategorySidebar = async ({ categoryId }) => {
                     </div>
                 </div>
 
-                {/* List */}
                 <ul className="flex flex-col py-2">
                     {allCategories?.data?.map((menu, i) => {
                         const name = isEn ? menu?.name_en : menu?.name_cn;
-                        const isActive = categoryId === menu?._id; // Check match
+                        const isActive = slug === menu?.slug; // Check match
 
                         return (
                             <li key={i}>
                                 <Link
-                                    href={`/product/${menu?._id}`}
-                                    className={`group relative flex items-center justify-between px-5 py-3.5 transition-all duration-200 ${
-                                        isActive 
-                                        ? "text-[#064a9b] bg-gray-50 font-semibold" // Active State
-                                        : "text-gray-600 hover:text-[#064a9b] hover:bg-gray-50 font-medium" // Normal State
-                                    }`}
+                                    href={`/category/${menu?.slug || menu?._id}`}
+                                    className={`group relative flex items-center justify-between px-5 py-3.5 transition-all duration-200 ${isActive
+                                            ? "text-[#064a9b] bg-gray-50 font-semibold" // Active State
+                                            : "text-gray-600 hover:text-[#064a9b] hover:bg-gray-50 font-medium" // Normal State
+                                        }`}
                                 >
                                     {/* Left active indicator line: Always show if active, otherwise show on hover */}
-                                    <span className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[#064a9b] transition-transform duration-300 rounded-r-full ${
-                                        isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"
-                                    }`}></span>
+                                    <span className={`absolute left-0 top-0 bottom-0 w-[3px] bg-[#064a9b] transition-transform duration-300 rounded-r-full ${isActive ? "scale-y-100" : "scale-y-0 group-hover:scale-y-100"
+                                        }`}></span>
 
                                     {/* Text: Always shifted if active, otherwise shift on hover */}
-                                    <span className={`text-[15px] transition-transform duration-200 ${
-                                        isActive ? "translate-x-1" : "group-hover:translate-x-1"
-                                    }`}>
+                                    <span className={`text-[15px] transition-transform duration-200 ${isActive ? "translate-x-1" : "group-hover:translate-x-1"
+                                        }`}>
                                         {name}
                                     </span>
 
-                                    <MdKeyboardArrowRight className={`text-lg transition-colors ${
-                                        isActive ? "text-[#064a9b]" : "text-gray-300 group-hover:text-[#064a9b]"
-                                    }`} />
+                                    <MdKeyboardArrowRight className={`text-lg transition-colors ${isActive ? "text-[#064a9b]" : "text-gray-300 group-hover:text-[#064a9b]"
+                                        }`} />
                                 </Link>
                             </li>
                         );

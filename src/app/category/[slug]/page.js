@@ -11,8 +11,8 @@ import ProductsPageLayout from "../../../components/Pages/Products/ProductsPageL
 
 export async function generateMetadata({ params }) {
   // read route params
-  const id = (await params).serviceCategoryId
-  const category = await getSpecificCategory(id)
+  const slug = (await params).slug
+  const category = await getSpecificCategory(slug)
 
   return {
     title: category?.data?.name_en,
@@ -21,9 +21,10 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const categoryProducts = await getSpecificCategory(params?.serviceCategoryId);
+  const slug = (await params).slug
   const banner = await getBanners("services")
   const locale = await getLocale();
+ 
   return (
     <div className="">
       <TopGap></TopGap>
@@ -37,7 +38,7 @@ export default async function Page({ params }) {
         }
         link={"/product"}
       ></ServiceBanner>
-      <ProductsPageLayout categoryId={params?.serviceCategoryId} locale={locale}></ProductsPageLayout>
+      <ProductsPageLayout slug={slug} locale={locale}></ProductsPageLayout>
       <WintechStandard></WintechStandard>
       <MachinesCenter></MachinesCenter>
       <FAQ></FAQ>

@@ -1,11 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { generateSlug } from '../../../../utils/generateSlug';
 
 const ServiceCard = ({ product, locale }) => {
-// Inside your map loop or component:
-const slug = generateSlug(product?.title_en); 
-const link = `/product/${slug}/${product?._id}`;
+const link = `/product/${product?.slug}`;
 //  console.log("ProductPPPPPPP:", product);
   return (
     <div className="w-full h-full border border-t-0">

@@ -7,7 +7,7 @@ import { MdArrowForward } from "react-icons/md";
 const TopProducts = async ({ locale }) => {
     // Fetch data
     const res = await getProducts();
-    const products = res?.data || [];
+    const products = res?.data?.data || [];
     
     // Optional: Slice to show only top 6 items
     const topProducts = products.slice(0, 8); 

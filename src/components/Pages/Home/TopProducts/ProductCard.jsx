@@ -4,9 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { MdSpeed, MdArrowForward } from "react-icons/md";
 import { BsCpu } from "react-icons/bs";
-// 1. Import motion
 import { motion } from "framer-motion";
-import { generateSlug } from '../../../../utils/generateSlug';
 import SendQuoteModal from '../../Products/SendQuoteModal';
 
 // 2. Accept index prop for staggered animation
@@ -26,9 +24,7 @@ const ProductCard = ({ product, locale, index = 0 }) => {
       const mainImage = product.images?.[0] || '/placeholder.jpg';
       const hoverImage = product.images?.[1] || mainImage;
 
-      // Generate Slug and Link
-      const slug = generateSlug(product?.title_en);
-      const link = `/product/${slug}/${product?._id}`;
+      const link = `/product/${product?.slug}`;
 
       return (
             // 3. Wrap in motion.div for entrance animation
