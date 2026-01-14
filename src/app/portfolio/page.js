@@ -4,10 +4,9 @@ import ShareBanner from "../../components/Shared/ShareBanner/ShareBanner";
 import TopGap from "../../components/Shared/TopGap/TopGap";
 import { getLocale } from "next-intl/server";
 import getBanners from "../../lib/getBanner"
-import { BASEURL } from "../../../Constant";
 export const metadata = {
-  title: "Guangdong KYD Company Portfolio | Precision Mask Making & Medical Equipment Manufacturing",
-  description: "See our work at Guangdong KYD Company, a trusted medical equipment manufacturer and face mask machine supplier. Our portfolio highlights high-quality non-woven machinery and innovative production solutions worldwide.",
+  title: "Portfolio Precision Machinery & Medical Equipment Manufacturing",
+  description: "Showcase your projects with Guangdong KYD’s professional portfolio. Explore innovative manufacturing solutions, product design, automation, and engineering excellence. Trusted by global clients in the UK, USA, Asia, and Africa.",
 };
 export default async function Page() {
   const banner = await getBanners("portfolio")

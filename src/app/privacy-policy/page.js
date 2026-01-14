@@ -1,5 +1,9 @@
 import TopGap from "../../components/Shared/TopGap/TopGap";
 
+export const metadata = {
+  title: "Data Protection for Global Medical Equipment Users",
+  description: "Learn about Guangdong Kuaiyuda's Privacy & Policy. We prioritize your privacy and detail how we collect, use, and protect your personal data. Find out how we manage orders, customize machinery, and ensure legal compliance for non-woven processing equipment and services."
+};
 const PrivacyPolicyPage = () => {
   return (
     <section className="pt-5">

@@ -15,7 +15,7 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
               <div key={i} className="mx-auto z-40 p-2">
                 <NavLink
                   onClick={() => setNavToggle(false)}
-                  href={`/product/${service?._id}`}
+                  href={`/category/${service?.slug || service?._id}`}
                   className="text-xs"
                 // activeClassName=""
                 // exact={service?.path === "/"}
@@ -23,16 +23,8 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
                   {locale == "en" ? service?.name_en : service?.name_cn}
                 </NavLink>
                 <ul className=" py-2">
-                  {service?.products?.map((subService, i) => {
-                    // Function to convert a string into a URL-friendly slug
-                    const generateSlug = (text) => {
-                      return text
-                        .toLowerCase() // Convert to lowercase
-                        .replace(/\s+/g, "-") // Replace spaces with hyphens
-                        .replace(/[^\w-]+/g, ""); // Remove all non-word characters
-                    };
-                    const slug = generateSlug(subService?.title_en);
-                    // console.log("Hellowwwwww:", service)
+                  {service?.products?.map((product, i) => {
+                 
                     return (
                       <li
                         key={i}
@@ -40,12 +32,12 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
                       >
                         <NavLink
                           onClick={() => setNavToggle(false)}
-                          href={`/product/${slug}/${subService?._id}`}
+                          href={`/product/${product?.slug || product?._id}`}
                            className="text-xs"
                         // activeClassName=""
-                        // exact={subService?.path === "/"}
+                        // exact={product?.path === "/"}
                         >
-                          {locale == "en" ? subService?.title_en : subService?.title_cn}
+                          {locale == "en" ? product?.title_en : product?.title_cn}
                         </NavLink>
                       </li>
                     );
@@ -54,11 +46,6 @@ const SubMenuBar = ({ setNavToggle, allCategories, locale }) => {
               </div>
             );
           })}
-          {/* <div className="w-full flex items-center justify-center">
-            <Link className="w-1/2" href={"/"}>
-              <Image src={logo} alt="logo" width={200} className="w-full" />
-            </Link>
-          </div> */}
         </div>
       </div>
     </div>

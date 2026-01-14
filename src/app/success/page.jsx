@@ -4,8 +4,8 @@ import { IoIosArrowForward } from 'react-icons/io';
 import Success from '../../components/Pages/Products/Success';
 
 export const metadata = {
-      title: 'hank You! T-power Fast EV Charging Solutions Await You',
-      description: 'Thanks for visiting T-power! Check your SMS for our EV charger solutions: fast EV charging stations, home & electric car charger installation, plus reliable electric vehicle charging near me. Experience our EV charging solutions network. Join the green revolution today!',
+      title: 'Thank You for Your Order – We Appreciate Your Business!',
+      description: 'Thank you for your order! We appreciate your trust in us. Your transaction is being processed, and we’re excited to serve you. Stay tuned for updates and feel free to reach out with any questions. Your satisfaction is our priority.',
 }
 
 export default function Page() {

@@ -12,8 +12,8 @@ import getBanners from "../../lib/getBanner"
 import { getLocale } from "next-intl/server";
 
 export const metadata = {
-  title: "Get in Touch with Guangdong KYD - Precision Machinery Leaders",
-  description: "Guangdong KYD Company specializes in precision machinery for non-woven products. Browse our range of automatic mask machines, medical gown machines, and more to optimize your manufacturing process.",
+  title: "Medical & Face Mask Machinery Manufacturer | KYD",
+  description: "KYD supplies medical machinery, face mask, non-woven, packaging, cosmetic care & safety equipment. ISO 13485 certified. Contact us for quotes.",
 };
 export default async function Page() {
   const banner = await getBanners("services")

@@ -7,8 +7,8 @@ import getAllBlogs from "../../lib/getAllBlogs"
 import { getLocale } from "next-intl/server";
 import getBanners from "../../lib/getBanner"
 export const metadata = {
-  title: "Guangdong KYD Company Blog | Insights on Mask-Making Machines & Non-Woven Equipment",
-  description: "Stay informed with the Guangdong KYD Company blog! As a top medical equipment manufacturer and face mask machine supplier, we share the latest trends, innovations, and insights in non-woven production.",
+  title: "Blog Hub | Mask Machines & Non-Woven Medical Equipment Manufacturing",
+  description: "The latest insights on non-woven medical equipment manufacturing, industry trends, and innovations. Stay updated with news, tips, and advanced solutions from the global market leader.",
 };
 export default async function Page() {
   const blogsData = await getAllBlogs()

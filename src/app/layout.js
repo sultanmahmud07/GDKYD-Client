@@ -10,9 +10,9 @@ import Script from "next/script";
 
 export const metadata = {
   title:
-    "Guangdong KYD Company | Trusted Medical Equipment Manufacturer & Face Mask Machine Supplier",
+    "Nonwoven PPE & Medical Equipment Machinery Manufacturer | KYD",
   description:
-    "Guangdong KYD Company – A leading manufacturer of automatic medical mask machines, non-woven production lines, and disposable hygiene product machines. Trusted for innovation, efficiency, and precision in automated manufacturing solutions. Contact us today!",
+    "Guangdong KYD manufactures premium nonwoven medical face mask, surgical gowns, gloves, and PPE equipment for machinery manufacturers. Trusted by healthcare facilities worldwide. FDA & CE certified—bulk supplier",
   metadataBase: new URL(`https://gdkyd.com`),
   alternates: {
     canonical: "./",
