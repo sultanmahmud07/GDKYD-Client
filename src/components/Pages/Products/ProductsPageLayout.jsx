@@ -2,8 +2,8 @@ import getProducts from '../../../lib/getProducts'
 import CategorySidebar from './CategorySidebar' // Renamed for clarity
 import ShowProducts from './ShowProducts'
 
-const ProductsPageLayout = async ({ slug, locale }) => {
-      const allProducts = await getProducts()
+const ProductsPageLayout = async ({ slug, locale, searchParams }) => {
+      const allProducts = await getProducts(searchParams, slug);
 
       return (
             <div className='bg-[#F8F9FA] min-h-screen'> {/* Added light gray bg */}
@@ -16,7 +16,7 @@ const ProductsPageLayout = async ({ slug, locale }) => {
 
                               {/* Right Content */}
                               <main className="w-full lg:w-3/4">
-                                    <ShowProducts locale={locale} products={allProducts?.data?.data} />
+                                    <ShowProducts locale={locale} metaData={allProducts?.data?.meta} products={allProducts?.data?.data} />
                               </main>
                         </div>
                   </div>

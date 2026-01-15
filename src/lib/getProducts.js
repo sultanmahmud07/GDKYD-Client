@@ -1,14 +1,21 @@
 import { BASEURL } from "../../Constant";
 
-export default async function getProducts() {
-    // console.log(props)
+export default async function getProducts(searchParams, slug) {
+    const params = new URLSearchParams();
+
+    // ✅ Required: Always include page and limit (with default values if not set)
+    params.set("page", searchParams?.page || "1");
+    params.set("limit", searchParams?.limit || "9");
+
+    // ✅ Optional query filters
+    if (slug) params.set("category", slug);
+
+    // ✅ Optional query filters
+    if (searchParams?.category) params.set("category", searchParams.category);
     const result = await fetch(
-        `${BASEURL}/product/all`,
+        `${BASEURL}/product/all?${params.toString()}`,
         {
             cache: "no-store"
-            // next: {
-            //     revalidate: 5,
-            // }
         }
     )
 

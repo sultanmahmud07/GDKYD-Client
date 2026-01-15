@@ -9,7 +9,7 @@ import { MdArrowBack, MdArrowForward, MdZoomIn } from "react-icons/md";
 // --- SUB-COMPONENT: Image Card ---
 const MachineCenterCard = ({ img }) => {
   return (
-    <div className="px-3 py-4 h-full">
+    <div className="px-1 md:px-3 py-4 h-full">
       <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
         
         {/* Image Container */}

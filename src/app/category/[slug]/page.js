@@ -20,11 +20,12 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params, searchParams }) {
   const slug = (await params).slug
   const banner = await getBanners("services")
   const locale = await getLocale();
- 
+  const filters = (await searchParams) || {};
+//  console.log("Filter: ", filters)
   return (
     <div className="">
       <TopGap></TopGap>
@@ -38,7 +39,7 @@ export default async function Page({ params }) {
         }
         link={"/product"}
       ></ServiceBanner>
-      <ProductsPageLayout slug={slug} locale={locale}></ProductsPageLayout>
+      <ProductsPageLayout slug={slug} locale={locale} searchParams={filters}></ProductsPageLayout>
       <WintechStandard></WintechStandard>
       <MachinesCenter></MachinesCenter>
       <FAQ></FAQ>
