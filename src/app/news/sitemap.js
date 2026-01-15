@@ -15,7 +15,7 @@ export default async function sitemap() {
   const newsData = await getNews();
 
   return newsData?.data?.map((news) => ({
-    url: `https://gdkyd.com/news/${news._id}`,
+    url: `https://gdkyd.com/news/${news?.slug || news?.id}`,
     // lastModified: product?.createdAt,
   }));
 }

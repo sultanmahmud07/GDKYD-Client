@@ -1,36 +1,35 @@
 "use client";
 import React from "react";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 const SocialIcons = () => {
-  // 1. Data structure for easy management
   const socialLinks = [
     {
       id: 1,
-      icon: <FaSquareXTwitter />,
-      name: "X (Twitter)",
-      url: "https://x.com/KYD_Precision",
-      colorCls: "hover:bg-black" // Optional specific brand colors
+      icon: <FaWhatsapp />,
+      name: "WhatsApp",
+      // Using the number from your image: +86-13902617335
+      url: "https://wa.me/8613902617335", 
+      colorCls: "hover:bg-[#25D366]" // WhatsApp Green
     },
     {
       id: 2,
-      icon: <FaFacebookF />,
-      name: "Facebook",
-      url: "https://www.facebook.com/guangdongkyd",
-      colorCls: "hover:bg-[#1877F2]"
+      icon: <FaEnvelope />,
+      name: "Email Us",
+      // Using the email from your image: kyd@kuaiyuda.com
+      url: "mailto:kyd@kuaiyuda.com", 
+      colorCls: "hover:bg-[#EA4335]" // Standard Mail Red (or match your brand)
     },
     {
       id: 3,
       icon: <FaLinkedinIn />,
       name: "LinkedIn",
       url: "https://www.linkedin.com/company/guangdong-kyd-medical-mask-machinery/",
-      colorCls: "hover:bg-[#0A66C2]"
+      colorCls: "hover:bg-[#0A66C2]" // LinkedIn Blue
     },
   ];
 
   return (
-    // Container: Centered vertically on the right edge
     <div className="fixed top-1/2 -translate-y-1/2 right-0 z-30 hidden md:flex flex-col gap-3">
       {socialLinks.map((item) => (
         <a
@@ -38,10 +37,9 @@ const SocialIcons = () => {
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          // 'group' class needed on parent to trigger hover on children
           className="group relative flex items-center justify-end pr-[2px]" 
         >
-          {/* 2. The Label (Hidden by default, appears on hover) */}
+          {/* Label (Hidden by default, slides in on hover) */}
           <span 
             className="absolute right-[100%] mr-3 px-3 py-1.5 
                        bg-slate-800 text-white text-sm font-medium rounded-md 
@@ -55,14 +53,14 @@ const SocialIcons = () => {
             <span className="absolute top-1/2 -right-[4px] -translate-y-1/2 border-t-4 border-b-4 border-l-4 border-transparent border-l-slate-800"></span>
           </span>
 
-          {/* 3. The Icon Box */}
+          {/* Icon Box */}
           <div 
             className={`flex items-center justify-center h-11 w-11 
                         bg-primary text-white text-xl 
                         rounded-l-xl shadow-[0_2px_10px_-3px_rgba(0,0,0,0.2)] 
                         relative z-10 transition-all duration-300
-                        ${item.colorCls || 'hover:bg-secondary'} 
-                        group-hover:w-12 group-hover:pr-1`} // Subtle expansion on hover
+                        ${item.colorCls} 
+                        group-hover:w-12 group-hover:pr-1`}
           >
             {item.icon}
           </div>

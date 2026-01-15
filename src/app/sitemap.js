@@ -13,7 +13,7 @@ export default function sitemap() {
           priority: 0.8,
         },
         {
-          url: 'https://gdkyd.com/product/category/sitemap.xml',
+          url: 'https://gdkyd.com/category/sitemap.xml',
           lastModified: new Date('2025-01-27T09:56:07+00:00'),
           changeFrequency: 'monthly',
           priority: 0.8,
