@@ -6,9 +6,9 @@ import { motion } from "framer-motion"; // 1. Import Motion
 
 const CategoryCard = ({ part, locale, index = 0 }) => {
   // Destructure with fallbacks
-  const title = locale === "en" ? part?.title_en : part?.title_cn;
+  const title = locale === "en" ? part?.name_en : part?.name_cn;
   const description = locale === "en" ? part?.description_en : part?.description_cn;
-  const imageSrc = part?.image || "/assets/placeholder.jpg";
+  const imageSrc = part?.image || "/assets/no-image.webp";
 
   return (
     <motion.div
@@ -23,7 +23,7 @@ const CategoryCard = ({ part, locale, index = 0 }) => {
         ease: "easeOut" 
       }}
     >
-      <Link href={`/category/${part?.slug || "slug-for-category"}`} className="block h-full">
+      <Link href={`/category/${part?.slug}`} className="block h-full">
         <div className="group relative bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
           <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
             <Image
@@ -53,7 +53,7 @@ const CategoryCard = ({ part, locale, index = 0 }) => {
 
             {/* Bottom Action Area */}
             <div className="mt-auto flex items-center text-[#064a9b] font-semibold text-sm">
-              <span className="mr-2">Explore Products</span>
+              <span className="mr-2">{locale === "en"  ? "Explore Products" : "探索产品"}</span>
               <span className="transform transition-transform duration-300 group-hover:translate-x-2">
                 <MdArrowForward size={18} />
               </span>

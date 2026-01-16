@@ -2,7 +2,7 @@ import { BASEURL } from "../../Constant";
 
 export default async function getCategoriesWithSlug() {
     const result = await fetch(
-        `${BASEURL}/category/retrieve/for-sitemap`,
+        `${BASEURL}/category/retrieve/skip-product`,
         {
             next: {
                 revalidate: 5,

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import getSpecificCategory from "../../../../../lib/getSpecificCategory";
-import ServiceCard from "../../AllServices/ServiceCard";
 import notFoundImg from "../../../../../../public/assets/services/product-not-found.png";
 import ProductCard from "../../../Home/TopProducts/ProductCard";
 

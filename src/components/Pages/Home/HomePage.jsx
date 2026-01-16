@@ -15,17 +15,18 @@ import getHomeBannerData from '../../../lib/getHomeBannerData';
 import { getLocale } from "next-intl/server"
 import TopProducts from "./TopProducts/TopProducts"
 import getPartners from "../../../lib/getPartners"
+import getCategoriesWithSlug from "../../../lib/getCategoriesWithSlug"
 
 const HomePage = async () => {
   const homeBanner = await getHomeBannerData()
+  const categories = await getCategoriesWithSlug()
+  const partnerData = await getPartners()
   const homePageData = await getHomePageData()
-    const partnerData = await getPartners()
   const locale = await getLocale();
-  // console.log("Home_Page_Data:",homeBanner?.data)
   return (
     <div>
       <Banner locale={locale} data={homeBanner?.data}></Banner>
-      <ProductCategory locale={locale} categories={homePageData?.data?.cnc_machine_parts}></ProductCategory>
+      <ProductCategory locale={locale} categories={categories?.data}></ProductCategory>
       <TopProducts locale={locale}></TopProducts>
       <CustomPartsBanner></CustomPartsBanner>
       <WhyChooseUs></WhyChooseUs>

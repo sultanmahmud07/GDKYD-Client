@@ -50,7 +50,7 @@ const BlogShow = async ({ blogs, locale }) => {
                         className="group flex items-center justify-between px-4 py-3 rounded-lg hover:bg-blue-50/50 transition-colors"
                       >
                         <span className="text-gray-600 font-medium text-sm group-hover:text-[#064a9b] transition-colors">
-                          {isEn ? cat.category : cat.category}
+                          {isEn ? cat.name_en : cat.name_cn}
                         </span>
                         <MdKeyboardArrowRight className="text-gray-300 group-hover:text-[#064a9b] transition-colors" />
                       </Link>

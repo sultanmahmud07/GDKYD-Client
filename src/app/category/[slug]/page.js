@@ -4,19 +4,18 @@ import ServiceBanner from "../../../components/Pages/Servces/ServiceBanner/Servi
 import WintechStandard from "../../../components/Pages/Servces/WintechStandard/WintechStandard";
 import GetInTouch from "../../../components/Shared/GetInTouch/GetInTouch";
 import TopGap from "../../../components/Shared/TopGap/TopGap";
-import getSpecificCategory from "../../../lib/getSpecificCategory"
+import getCategoryBySlug from "../../../lib/getCategoryBySlug"
 import getBanners from "../../../lib/getBanner"
 import { getLocale } from "next-intl/server";
 import ProductsPageLayout from "../../../components/Pages/Products/ProductsPageLayout";
 
 export async function generateMetadata({ params }) {
-  // read route params
   const slug = (await params).slug
-  const category = await getSpecificCategory(slug)
+  const category = await getCategoryBySlug(slug)
 
   return {
-    title: category?.data?.name_en,
-    description: category?.data?.description_en,
+    title: category?.data?.metaTitle || category?.data?.name_en,
+    description: category?.data?.metaDescription || category?.data?.description_en,
   }
 }
 
@@ -25,7 +24,7 @@ export default async function Page({ params, searchParams }) {
   const banner = await getBanners("services")
   const locale = await getLocale();
   const filters = (await searchParams) || {};
-//  console.log("Filter: ", filters)
+  //  console.log("Filter: ", filters)
   return (
     <div className="">
       <TopGap></TopGap>

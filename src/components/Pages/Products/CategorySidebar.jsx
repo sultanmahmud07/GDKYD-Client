@@ -38,7 +38,7 @@ const CategorySidebar = async ({ slug }) => {
 
                 <ul className="flex flex-col py-2">
                     {allCategories?.data?.map((menu, i) => {
-                        const name = isEn ? menu?.category : menu?.category;
+                        const name = isEn ? menu?.name_en : menu?.name_cn;
                         const isActive = slug === menu?.slug; // Check match
 
                         return (
