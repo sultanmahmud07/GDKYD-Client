@@ -6,11 +6,12 @@ import { MdArrowForward } from "react-icons/md";
 
 const TopProducts = async ({ locale }) => {
     // Fetch data
-    const res = await getProducts();
+    const searchParams = { limit: 8, page: 1 };
+    const res = await getProducts(searchParams);
     const products = res?.data?.data || [];
     
     // Optional: Slice to show only top 6 items
-    const topProducts = products.slice(0, 8); 
+    const topProducts = products; 
 
     // Localization Titles
     const sectionTitle = locale === 'en' ? "Our Top Selling Machinery" : "我们最畅销的机械";

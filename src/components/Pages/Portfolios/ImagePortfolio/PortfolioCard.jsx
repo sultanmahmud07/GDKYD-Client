@@ -27,7 +27,7 @@ const TechCard = ({ portfolio, locale, index }) => {
       transition={{ delay: index * 0.1, duration: 0.5 }}
       className="group relative bg-white"
     >
-      <Link href={`/portfolio/${portfolio?._id}`} className="block h-full">
+      <Link href={`/portfolio/${portfolio?.slug}`} className="block h-full">
         
         {/* --- 1. THE IMAGE AREA (Technical View) --- */}
         <div className="relative h-[300px] w-full overflow-hidden bg-gray-50 mb-5">

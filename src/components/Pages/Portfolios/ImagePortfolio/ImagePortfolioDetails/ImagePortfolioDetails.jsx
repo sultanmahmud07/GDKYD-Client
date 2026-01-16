@@ -4,7 +4,7 @@ import { IoIosArrowForward, IoMdTime, IoMdFolderOpen } from "react-icons/io";
 import FindProducts from "../../../../../components/Shared/FindProducts/FindProducts";
 import RelatedImagePortfolio from "../RelatedPortfolioImage/RelataedPortfolioImage";
 
-const ImagePortfolioDetails = ({ locale, data, slag }) => {
+const ImagePortfolioDetails = ({ locale, data, slug }) => {
   const isEn = locale === "en";
 
   return (
@@ -71,7 +71,7 @@ const ImagePortfolioDetails = ({ locale, data, slag }) => {
           <aside className="lg:col-span-4">
              {/* Sticky container so it follows scroll */}
             <div className="sticky top-24">
-               <RelatedImagePortfolio slag={slag} />
+               <RelatedImagePortfolio slug={slug} />
             </div>
           </aside>
 

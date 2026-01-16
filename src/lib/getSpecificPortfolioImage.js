@@ -3,7 +3,7 @@ import { BASEURL } from "../../Constant";
 export default async function getSpecificPortfolioImage(props) {
     // console.log(props)
     const result = await fetch(
-        `${BASEURL}/portfolio/${props}`
+        `${BASEURL}/portfolio/slug/${props}`
         ,{  cache: 'no-store' }
         )
 

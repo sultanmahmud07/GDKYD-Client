@@ -1,18 +1,17 @@
 import { BASEURL } from "../../Constant";
 
-export default async function getBanners(props) {
+export default async function getCategoriesWithSlug() {
     const result = await fetch(
-        `${BASEURL}/web-banner/${props}`,
+        `${BASEURL}/category/retrieve/for-sitemap`,
         {
             next: {
                 revalidate: 5,
             }
         }
-        // ,{  cache: 'no-store' }
     )
 
     if (!result.ok) {
-        throw new Error("There was an error fetching Banner!")
+        throw new Error("There was an error fetching Categories data!")
     }
     return result.json();
 }

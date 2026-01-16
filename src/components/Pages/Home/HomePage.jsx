@@ -25,7 +25,6 @@ const HomePage = async () => {
   return (
     <div>
       <Banner locale={locale} data={homeBanner?.data}></Banner>
-      {/* <CngMachines locale={locale} machines={homePageData?.data?.cnc_machine_parts}></CngMachines> */}
       <ProductCategory locale={locale} categories={homePageData?.data?.cnc_machine_parts}></ProductCategory>
       <TopProducts locale={locale}></TopProducts>
       <CustomPartsBanner></CustomPartsBanner>

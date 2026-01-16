@@ -35,7 +35,7 @@ const RelatedImagePortfolio = async ({ slag }) => {
         {filteredPortfolios.map((item) => (
           <Link 
             key={item._id} 
-            href={`/portfolio/${item._id}`}
+            href={`/portfolio/${item.slug}`}
             className="group flex gap-4 items-start"
           >
             {/* Thumbnail */}

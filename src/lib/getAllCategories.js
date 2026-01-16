@@ -15,3 +15,4 @@ export default async function getAllCategories() {
     }
     return result.json();
 }
+// /category/retrieve/for-sitemap

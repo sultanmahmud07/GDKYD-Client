@@ -1,13 +1,13 @@
 import { getLocale } from "next-intl/server";
-import getAllCategories from "../../../lib/getAllCategories";
+import getCategoriesWithSlug from "../../../lib/getCategoriesWithSlug";
 import Link from "next/link";
 import { MdSearch, MdKeyboardArrowRight, MdPhone, MdEmail, MdCategory } from "react-icons/md";
 
 const CategorySidebar = async ({ slug }) => {
-    const allCategories = await getAllCategories();
+    const allCategories = await getCategoriesWithSlug();
     const locale = await getLocale();
     const isEn = locale === "en";
-
+// console.log(allCategories)
     return (
         <div className="space-y-6">
 
@@ -38,7 +38,7 @@ const CategorySidebar = async ({ slug }) => {
 
                 <ul className="flex flex-col py-2">
                     {allCategories?.data?.map((menu, i) => {
-                        const name = isEn ? menu?.name_en : menu?.name_cn;
+                        const name = isEn ? menu?.category : menu?.category;
                         const isActive = slug === menu?.slug; // Check match
 
                         return (

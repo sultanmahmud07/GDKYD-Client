@@ -8,11 +8,11 @@ import {
   MdKeyboardArrowRight,
   MdCloudDownload
 } from "react-icons/md";
-import getAllCategories from "../../../../lib/getAllCategories";
+import getCategoriesWithSlug from "../../../../lib/getCategoriesWithSlug";
 import DescriptionText from "../../Portfolios/ImagePortfolio/DescriptionText";
 
 const BlogShow = async ({ blogs, locale }) => {
-  const allCategories = await getAllCategories();
+  const allCategories = await getCategoriesWithSlug();
   const isEn = locale === "en";
 
   return (
@@ -50,7 +50,7 @@ const BlogShow = async ({ blogs, locale }) => {
                         className="group flex items-center justify-between px-4 py-3 rounded-lg hover:bg-blue-50/50 transition-colors"
                       >
                         <span className="text-gray-600 font-medium text-sm group-hover:text-[#064a9b] transition-colors">
-                          {isEn ? cat.name_en : cat.name_cn}
+                          {isEn ? cat.category : cat.category}
                         </span>
                         <MdKeyboardArrowRight className="text-gray-300 group-hover:text-[#064a9b] transition-colors" />
                       </Link>

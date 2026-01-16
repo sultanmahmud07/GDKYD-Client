@@ -9,7 +9,6 @@ const CategoryCard = ({ part, locale, index = 0 }) => {
   const title = locale === "en" ? part?.title_en : part?.title_cn;
   const description = locale === "en" ? part?.description_en : part?.description_cn;
   const imageSrc = part?.image || "/assets/placeholder.jpg";
-  const linkHref = part?._id ? `/product/${part._id}` : "/";
 
   return (
     <motion.div
