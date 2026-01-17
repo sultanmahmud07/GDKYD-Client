@@ -7,8 +7,8 @@ export async function generateMetadata({ params }) {
   const blog = await getSingleBlog(slug);
  
   return {
-    title: blog?.data?.name_en,
-    description: blog?.data?.description_en,
+    title: blog?.data?.metaTitle || blog?.data?.name_en,
+    description: blog?.data?.metaDescription,
   }
 }
  

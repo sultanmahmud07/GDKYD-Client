@@ -1,3 +1,4 @@
+import './news-style.css'
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosArrowForward, IoMdTime, IoMdCalendar } from "react-icons/io";
@@ -26,17 +27,17 @@ const BlogDetails = async ({ slug }) => {
   const remainingBlogs = otherBlogs?.slice(5) || [];
 
   // Helper for content rendering
-  const content = isEn 
-    ? blog?.data?.description_en 
+  const content = isEn
+    ? blog?.data?.description_en
     : blog?.data?.description_cn;
-  
-  const title = isEn 
-    ? blog?.data?.name_en 
+
+  const title = isEn
+    ? blog?.data?.name_en
     : blog?.data?.name_cn;
 
   return (
     <div className="bg-white">
-      
+
       {/* --- Header / Breadcrumb --- */}
       <div className="bg-[#F8F9FA] border-b border-gray-100 py-4 md:py-6">
         <div className="main_container">
@@ -50,15 +51,15 @@ const BlogDetails = async ({ slug }) => {
           <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-[#252B42] leading-tight">
             {title}
           </h1>
-          
+
           {/* Date / Meta */}
           <div className="flex items-center gap-4 mt-4 text-sm text-gray-500">
-             <div className="flex items-center gap-1.5">
-                <IoMdCalendar className="text-[#064a9b] text-lg" />
-                <span>{new Date(blog?.data?.createdAt || Date.now()).toLocaleDateString()}</span>
-             </div>
-             <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
-             <span>{isEn ? "Industry News" : "行业新闻"}</span>
+            <div className="flex items-center gap-1.5">
+              <IoMdCalendar className="text-[#064a9b] text-lg" />
+              <span>{new Date(blog?.data?.createdAt || Date.now()).toLocaleDateString()}</span>
+            </div>
+            <div className="w-1 h-1 bg-gray-300 rounded-full"></div>
+            <span>{isEn ? "Industry News" : "行业新闻"}</span>
           </div>
         </div>
       </div>
@@ -66,10 +67,10 @@ const BlogDetails = async ({ slug }) => {
       {/* --- Main Content Area --- */}
       <div className="main_container py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10">
-          
+
           {/* LEFT: Article Content (8 Cols) */}
           <div className="lg:col-span-8">
-            
+
             {/* Featured Image */}
             <div className="relative w-full bg-gray-100 rounded-2xl overflow-hidden mb-8 border border-gray-100 shadow-sm">
               <Image
@@ -81,25 +82,18 @@ const BlogDetails = async ({ slug }) => {
                 priority
               />
             </div>
+            <div
+              className="blog_content py-4"
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></div>
 
-            {/* Article Text */}
-            <div className="blog_content">
-              {content?.map((des, i) => (
-                <p
-                  key={i}
-                  className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 last:mb-0 font-light"
-                >
-                  {des}
-                </p>
-              ))}
-            </div>
           </div>
 
           {/* RIGHT: Sidebar (4 Cols) */}
           <div className="lg:col-span-4">
-             <div className="sticky top-24">
-                <SidebarNews blogs={sidebarBlogs} locale={locale} />
-             </div>
+            <div className="sticky top-24">
+              <SidebarNews blogs={sidebarBlogs} locale={locale} />
+            </div>
           </div>
 
         </div>
@@ -107,9 +101,9 @@ const BlogDetails = async ({ slug }) => {
 
       {/* --- Bottom: Remaining Blogs --- */}
       {remainingBlogs.length > 0 && (
-         <div className="border-t border-gray-100 bg-[#F8FAFB]">
-            <RelatedBlogs locale={locale} blogs={remainingBlogs} />
-         </div>
+        <div className="border-t border-gray-100 bg-[#F8FAFB]">
+          <RelatedBlogs locale={locale} blogs={remainingBlogs} />
+        </div>
       )}
 
       <GetInTouch locale={locale} />

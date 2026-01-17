@@ -12,8 +12,8 @@ export async function generateMetadata({ params }) {
   const product = await getSpecificProduct(slug)
 
   return {
-    title: product?.data?.title_en,
-    description: product?.data?.subTitle_en,
+    title: product?.data?.metaTitle || product?.data?.title_en,
+    description: product?.data?.metaDescription || product?.data?.subTitle_en,
   }
 }
 
