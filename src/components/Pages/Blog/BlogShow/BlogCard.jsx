@@ -2,22 +2,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowForward, MdCalendarToday } from "react-icons/md";
 
+// Helper: Strip HTML tags to ensure clean preview text
+const stripHtml = (html) => {
+  if (!html) return "";
+  // Converts "Hello<br>World" to "Hello World" and removes other tags
+  return html.toString().replace(/<[^>]*>?/gm, '').trim();
+};
+
 const BlogCard = ({ blog, locale }) => {
   const isEn = locale === "en";
 
   // 1. Text Helpers
   const title = isEn ? blog?.name_en : blog?.name_cn;
   
-  // Safe extraction of description
-  const descriptionRaw = isEn
-    ? blog?.description_en
-    : blog?.description_cn;
+  // 2. Safe Description Extraction
+  const descriptionRaw = isEn ? blog?.description_en : blog?.description_cn;
   
-  const description = Array.isArray(descriptionRaw) 
-    ? descriptionRaw[0] 
-    : (typeof descriptionRaw === 'string' ? descriptionRaw : "");
+  let descriptionText = "";
 
-  // 2. Date Formatting (Assumes blog has createdAt, otherwise uses current date)
+  if (Array.isArray(descriptionRaw)) {
+    // If array, take the first item, or empty string if array is empty
+    descriptionText = descriptionRaw.length > 0 ? descriptionRaw[0] : "";
+  } else if (typeof descriptionRaw === 'string') {
+    descriptionText = descriptionRaw;
+  }
+  
+  // Clean the text (remove HTML tags)
+  const finalDescription = stripHtml(descriptionText);
+
+  // 3. Date Formatting
   const dateObj = new Date(blog?.createdAt || Date.now());
   const day = dateObj.getDate();
   const month = dateObj.toLocaleString(isEn ? 'en-US' : 'zh-CN', { month: 'short' });
@@ -34,12 +47,12 @@ const BlogCard = ({ blog, locale }) => {
         <Image
           width={600}
           height={400}
-          src={blog?.heading_image}
-          alt={title}
+          src={blog?.heading_image || "/placeholder.jpg"} // Added fallback image safety
+          alt={title || "Blog Image"}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         
-        {/* Modern Date Badge */}
+        {/* Date Badge */}
         <div className="absolute top-4 left-4 bg-white/95 backdrop-blur shadow-sm rounded-xl px-3 py-2 text-center min-w-[60px]">
              <span className="block text-xl font-bold text-[#064a9b] leading-none">{day}</span>
              <span className="block text-xs font-semibold text-gray-500 uppercase tracking-wide">{month}</span>
@@ -54,7 +67,7 @@ const BlogCard = ({ blog, locale }) => {
              <MdCalendarToday />
              <span>{year}</span>
              <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-             <span>{isEn ? "Company News" : "公司新闻"}</span>
+             <span>{isEn ? "GDKYD" : "GDKYD"}</span>
         </div>
 
         {/* Title */}
@@ -64,7 +77,7 @@ const BlogCard = ({ blog, locale }) => {
         
         {/* Description */}
         <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6 flex-grow">
-          {description || (isEn ? "Click to read the full article..." : "点击阅读全文...")}
+          {finalDescription || (isEn ? "Click to read the full article..." : "点击阅读全文...")}
         </p>
 
         {/* Footer Link */}
