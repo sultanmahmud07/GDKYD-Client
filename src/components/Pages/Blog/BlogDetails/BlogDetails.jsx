@@ -82,10 +82,28 @@ const BlogDetails = async ({ slug }) => {
                 priority
               />
             </div>
-            <div
-              className="blog_content py-4"
-              dangerouslySetInnerHTML={{ __html: content }}
-            ></div>
+
+            {/* Article Text */}
+            {
+              content && Array.isArray(content) === false ?
+                <div
+                  className="blog_content py-4"
+                  dangerouslySetInnerHTML={{ __html: content }}
+                ></div>
+
+                :
+                <div className="blog_content">
+                  {content?.map((des, i) => (
+                    <p
+                      key={i}
+                      className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 last:mb-0 font-light"
+                    >
+                      {des}
+                    </p>
+                  ))}
+                </div>
+            }
+
 
           </div>
 
