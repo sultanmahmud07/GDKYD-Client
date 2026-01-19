@@ -6,7 +6,7 @@ import { MdArrowForward } from "react-icons/md";
 
 const TopProducts = async ({ locale }) => {
     // Fetch data
-    const searchParams = { limit: 8, page: 1 };
+    const searchParams = { limit: 8, page: 1, viewOnHomepage: true };
     const res = await getProducts(searchParams);
     const products = res?.data?.data || [];
     
