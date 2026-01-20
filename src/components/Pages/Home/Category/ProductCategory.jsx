@@ -79,7 +79,7 @@ const ProductCategory = ({ categories, locale }) => {
             </div>
 
             {/* View All Button */}
-            <Link href="/products">
+            <Link href="/product">
               <button className="bg-[#064a9b] text-white px-6 py-2.5 rounded-lg font-medium text-sm hover:bg-[#053a7a] transition-colors shadow-md hidden md:block">
                 {t(`Category.button`) || "VIEW ALL CATEGORIES"}
               </button>
@@ -100,7 +100,7 @@ const ProductCategory = ({ categories, locale }) => {
 
         {/* Mobile View All Button (Only shows on small screens) */}
         <div className="mt-8 text-center md:hidden">
-            <Link href="/products">
+            <Link href="/product">
               <button className="bg-[#064a9b] text-white px-8 py-3 rounded-full font-medium shadow-md w-full">
                 {t(`Category.button`) || "VIEW ALL CATEGORIES"}
               </button>
