@@ -1,19 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
 import getProducts from '../../../../lib/getProducts'
-import ProductCard from './ProductCard' // We will create this next
+import ProductCard from './ProductCard' 
 import { MdArrowForward } from "react-icons/md";
 
 const TopProducts = async ({ locale }) => {
-    // Fetch data
     const searchParams = { limit: 8, page: 1, viewOnHomepage: "true" };
     const res = await getProducts(searchParams);
     const products = res?.data?.data || [];
 
-    // Optional: Slice to show only top 6 items
     const topProducts = products;
-
-    // Localization Titles
     const sectionTitle = locale === 'en' ? "Our Top Selling Machinery" : "我们最畅销的机械";
     const sectionDesc = locale === 'en'
         ? "Discover our most popular automated solutions, trusted by manufacturers worldwide for their precision and speed."

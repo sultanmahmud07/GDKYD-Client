@@ -119,20 +119,33 @@ const NewFooter = () => {
 
                 </span>
               </p>
-              <p className="flex items-center gap-3 text-[#FFFFFFE5]">
-                <span className="text-xl font-semibold text-primary">
-                  <MdOutlinePhonelinkRing />
-                </span>
-                <span className="text-xs md:text-sm">0769-87937128</span>
-              </p>
-              <p className="flex items-center gap-3 text-[#FFFFFFE5]">
-                <span className="text-xl font-semibold text-primary">
-                  <MdOutlineEmail />
-                </span>
-                <span className="lowercase text-xs md:text-sm">
-                  kyd@kuaiyuda.com
-                </span>
-              </p>
+              <div itemScope itemType="https://schema.org/Organization mt-2">
+                {/* Phone Link */}
+                <a
+                  href="tel:+86076987937128"
+                  className="flex items-center gap-3 text-[#FFFFFFE5] hover:text-white transition-colors group"
+                  itemProp="telephone"
+                >
+                  <span className="text-xl font-semibold text-primary group-hover:scale-110 transition-transform">
+                    <MdOutlinePhonelinkRing />
+                  </span>
+                  <span className="text-xs md:text-sm">0769-87937128</span>
+                </a>
+
+                {/* Email Link */}
+                <a
+                  href="mailto:kyd@kuaiyuda.com"
+                  className="flex items-center gap-3 text-[#FFFFFFE5] hover:text-white transition-colors group mt-2"
+                  itemProp="email"
+                >
+                  <span className="text-xl font-semibold text-primary group-hover:scale-110 transition-transform">
+                    <MdOutlineEmail />
+                  </span>
+                  <span className="lowercase text-xs md:text-sm">
+                    kyd@kuaiyuda.com
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
           <div className="flex flex-col gap-3 font-normal">
@@ -176,9 +189,8 @@ const NewFooter = () => {
                   type="email"
                   required
                   placeholder="Type your email"
-                  className={`input input-sm input-bordered join-item w-full ${
-                    isValidEmail ? "" : "border-red-500"
-                  }`} // Add red border when email is not valid
+                  className={`input input-sm input-bordered join-item w-full ${isValidEmail ? "" : "border-red-500"
+                    }`} // Add red border when email is not valid
                 />
                 <button
                   onClick={handleSubscribe}

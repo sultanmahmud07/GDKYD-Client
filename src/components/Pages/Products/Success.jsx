@@ -44,14 +44,14 @@ const Success = () => {
 
                               {/* Subtitle */}
                               <p className="text-[#9F9C96] mb-6">
-                                    Message sent successfully. We will contact you as soon as possible.
+                                     Your message has been sent successfully. We will contact you as soon as possible.
                               </p>
 
                               {/* Button */}
                               <Link href={"/product"}>
                                     <button
                                           type="button"
-                                          className="px-6 md:px-10 cursor-pointer py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition"
+                                          className="px-6 md:px-10 cursor-pointer py-3 bg-primary hover:bg-secondary text-white font-semibold rounded-lg shadow-md transition"
                                     >
                                           Explore More
                                     </button></Link>

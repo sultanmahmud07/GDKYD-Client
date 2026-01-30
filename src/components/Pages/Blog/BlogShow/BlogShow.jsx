@@ -93,15 +93,30 @@ const BlogShow = async ({ blogs, locale }) => {
                   : "联系我们的专家获取机械的定制报价。"}
               </p>
 
-              <div className="space-y-4 mb-8 relative z-10">
-                <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg border border-white/5">
+              <div
+                className="space-y-4 mb-8 relative z-10"
+                itemScope
+                itemType="https://schema.org/Organization"
+              >
+                {/* Phone Number */}
+                <a
+                  href="tel:+8613902617335"
+                  className="flex items-center gap-3 bg-white/10 p-3 rounded-lg border border-white/5 hover:bg-white/20 transition-colors cursor-pointer"
+                  itemProp="telephone"
+                >
                   <MdPhone className="text-blue-200" />
-                  <span className="text-sm font-medium">+86 123 456 7890</span>
-                </div>
-                <div className="flex items-center gap-3 bg-white/10 p-3 rounded-lg border border-white/5">
+                  <span className="text-sm font-medium">+86-13902617335</span>
+                </a>
+
+                {/* Email Address */}
+                <a
+                  href="mailto:kyd@kuaiyuda.com"
+                  className="flex items-center gap-3 bg-white/10 p-3 rounded-lg border border-white/5 hover:bg-white/20 transition-colors cursor-pointer"
+                  itemProp="email"
+                >
                   <MdEmail className="text-blue-200" />
-                  <span className="text-sm font-medium">info@kyd-machinery.com</span>
-                </div>
+                  <span className="text-sm font-medium">kyd@kuaiyuda.com</span>
+                </a>
               </div>
 
               <Link
