@@ -8,6 +8,7 @@ export default async function getAllCategories() {
                 revalidate: 5,
             }
         }
+        // { cache: 'no-store' }
     )
 
     if (!result.ok) {

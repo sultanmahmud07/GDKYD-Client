@@ -119,7 +119,7 @@ const NewFooter = () => {
 
                 </span>
               </p>
-              <div itemScope itemType="https://schema.org/Organization mt-2">
+              <div className="mt-2" itemScope itemType="https://schema.org/Organization">
                 {/* Phone Link */}
                 <a
                   href="tel:+86076987937128"
