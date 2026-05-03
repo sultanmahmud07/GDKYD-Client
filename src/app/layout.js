@@ -1,6 +1,6 @@
+import "./globals.css";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import "./globals.css";
 import NavbarWrap from "../components/Shared/Navbar/NavberWrap";
 import NewFooter from "../components/Shared/Footer/NewFooter";
 import ChatBox from "../components/Shared/ChatBox/ChatBox";
