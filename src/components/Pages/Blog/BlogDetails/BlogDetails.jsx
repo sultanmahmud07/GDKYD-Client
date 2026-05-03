@@ -15,7 +15,7 @@ const BlogDetails = async ({ slug }) => {
   const allBlogs = await getAllBlogs();
   const locale = await getLocale();
   const isEn = locale === "en";
-
+// console.log(blog)
   // 1. Filter out the current blog
   const currentId = blog?.data?._id;
   const otherBlogs = allBlogs?.data?.filter(
