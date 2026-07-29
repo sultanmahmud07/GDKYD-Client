@@ -10,6 +10,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import { BsInstagram } from "react-icons/bs";
 import { useTranslations } from "next-intl";
+import SafeEmailLink from "../../../Shared/SafeEmailLink";
 
 const ContactBox = ({ locale }) => {
   const t = useTranslations('Contact');
@@ -77,9 +78,9 @@ const ContactBox = ({ locale }) => {
               </a>
 
               {/* 3. Email - Clickable & Microdata */}
-              <a
-                href="mailto:kyd@kuaiyuda.com"
+              <SafeEmailLink
                 className="flex items-center gap-2 group cursor-pointer hover:opacity-80 transition-opacity"
+                itemProp="email"
               >
                 <p className="p-2 md:p-3 shadow bg-[#D3E5F0] text-md md:text-xl rounded text-black group-hover:bg-[#064a9b] group-hover:text-white transition-colors">
                   <span>
@@ -88,11 +89,11 @@ const ContactBox = ({ locale }) => {
                 </p>
                 <p>
                   {t(`ContactForm.ContactInfo.mail`)} :{" "}
-                  <span className="font-semibold" itemProp="email">
-                    kyd@kuaiyuda.com
+                  <span className="font-semibold">
+                    <SafeEmailLink textOnly={true} />
                   </span>
                 </p>
-              </a>
+              </SafeEmailLink>
 
               {/* 4. Address - Microdata */}
               <div

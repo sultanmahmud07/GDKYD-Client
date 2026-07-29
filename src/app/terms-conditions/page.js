@@ -1,4 +1,5 @@
 import TopGap from "../../components/Shared/TopGap/TopGap";
+import SafeEmailLink from "../../components/Shared/SafeEmailLink";
 
 const TermsAndConditions = () => {
   return (
@@ -110,7 +111,7 @@ const TermsAndConditions = () => {
                 <strong>Address:</strong> No.321 Dongshen Road, Tangxia Town, Dongguan City, Guangdong Province
               </li>
               <li>
-                <strong>Email:</strong> kyd@kuaiyuda.com
+                <strong>Email:</strong> <SafeEmailLink textOnly={true} />
               </li>
               <li>
                 <strong>Phone:</strong> 86-13902617335

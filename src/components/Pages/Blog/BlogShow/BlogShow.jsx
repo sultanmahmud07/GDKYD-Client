@@ -10,6 +10,7 @@ import {
 } from "react-icons/md";
 import getCategoriesWithSlug from "../../../../lib/getCategoriesWithSlug";
 import DescriptionText from "../../Portfolios/ImagePortfolio/DescriptionText";
+import SafeEmailLink from "../../../Shared/SafeEmailLink";
 
 const BlogShow = async ({ blogs, locale }) => {
   const allCategories = await getCategoriesWithSlug();
@@ -109,14 +110,13 @@ const BlogShow = async ({ blogs, locale }) => {
                 </a>
 
                 {/* Email Address */}
-                <a
-                  href="mailto:kyd@kuaiyuda.com"
+                <SafeEmailLink
                   className="flex items-center gap-3 bg-white/10 p-3 rounded-lg border border-white/5 hover:bg-white/20 transition-colors cursor-pointer"
                   itemProp="email"
                 >
                   <MdEmail className="text-blue-200" />
-                  <span className="text-sm font-medium">kyd@kuaiyuda.com</span>
-                </a>
+                  <SafeEmailLink textOnly={true} className="text-sm font-medium" />
+                </SafeEmailLink>
               </div>
 
               <Link

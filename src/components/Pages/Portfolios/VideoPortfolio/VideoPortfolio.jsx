@@ -24,6 +24,7 @@ const VideoPortfolio =  ({locale, videos}) => {
                   frameBorder="0"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
                 ></iframe>
               ) : (
                 <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gray-200">

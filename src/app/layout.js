@@ -42,10 +42,9 @@ export const metadata = {
   creator: "GDKYD",
   publisher: "GDKYD",
   formatDetection: {
-    email: "kyd@kuaiyuda.com",
-    address:
-      "No.321 Dongshen Road, Tangxia Town, Dongguan City, Guangdong Province",
-    telephone: "+1-234-567-890",
+    email: false,
+    address: false,
+    telephone: false,
   },
   keywords: [
     "Trusted Medical Equipment Manufacturer",
@@ -130,6 +129,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
+            sandbox=""
           ></iframe>
         </noscript>
       </body>

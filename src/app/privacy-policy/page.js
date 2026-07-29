@@ -1,4 +1,5 @@
 import TopGap from "../../components/Shared/TopGap/TopGap";
+import SafeEmailLink from "../../components/Shared/SafeEmailLink";
 
 export const metadata = {
   title: "Data Protection for Global Medical Equipment Users",
@@ -84,7 +85,7 @@ const PrivacyPolicyPage = () => {
           <address className="mb-4">
             <p><strong>Guangdong Kuaiyuda Precision Machinery Co., Ltd.</strong></p>
             <p>Address: No.321 Dongshen Road, Tangxia Town, Dongguan City, Guangdong Province</p>
-            <p>Email: kyd@kuaiyuda.com</p>
+            <p>Email: <SafeEmailLink textOnly={true} /></p>
             <p>Phone: 86-13902617335</p>
           </address>
 

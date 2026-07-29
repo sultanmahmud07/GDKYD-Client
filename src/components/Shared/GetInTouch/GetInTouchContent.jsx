@@ -13,6 +13,10 @@ import { IoLogoTiktok } from "react-icons/io5";
 import ContactForm from "../../../components/Shared/ContactFrom/ContactFrom";
 
 const GetInTouchContent = ({ translations, formLabels, locale }) => {
+  const [email, setEmail] = React.useState("");
+  React.useEffect(() => {
+    setEmail("kyd" + "@" + "kuaiyuda.com");
+  }, []);
   
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -73,8 +77,8 @@ const GetInTouchContent = ({ translations, formLabels, locale }) => {
                 <InfoItem 
                   icon={<MdOutlineMailOutline />} 
                   label={translations.mailLabel} 
-                  value="kyd@kuaiyuda.com" 
-                  href="mailto:kyd@kuaiyuda.com"
+                  value={email || "..."} 
+                  href={email ? `mailto:${email}` : undefined}
                 />
 
                 {/* Address - Click to Google Maps */}

@@ -19,6 +19,7 @@ import { MdOutlinePhonelinkRing } from "react-icons/md";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import SafeEmailLink from "../SafeEmailLink";
 import { BASEURL } from "../../../../Constant";
 import axios from "axios";
 
@@ -133,18 +134,15 @@ const NewFooter = () => {
                 </a>
 
                 {/* Email Link */}
-                <a
-                  href="mailto:kyd@kuaiyuda.com"
+                <SafeEmailLink
                   className="flex items-center gap-3 text-[#FFFFFFE5] hover:text-white transition-colors group mt-2"
                   itemProp="email"
                 >
                   <span className="text-xl font-semibold text-primary group-hover:scale-110 transition-transform">
                     <MdOutlineEmail />
                   </span>
-                  <span className="lowercase text-xs md:text-sm">
-                    kyd@kuaiyuda.com
-                  </span>
-                </a>
+                  <SafeEmailLink textOnly={true} className="lowercase text-xs md:text-sm" />
+                </SafeEmailLink>
               </div>
             </div>
           </div>

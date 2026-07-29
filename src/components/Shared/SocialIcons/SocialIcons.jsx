@@ -3,6 +3,11 @@ import React from "react";
 import { FaWhatsapp, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 const SocialIcons = () => {
+  const [emailUrl, setEmailUrl] = React.useState("#");
+  React.useEffect(() => {
+    setEmailUrl("mailto:" + "kyd" + "@" + "kuaiyuda.com");
+  }, []);
+
   const socialLinks = [
     {
       id: 1,
@@ -17,7 +22,7 @@ const SocialIcons = () => {
       icon: <FaEnvelope />,
       name: "Email Us",
       // Using the email from your image: kyd@kuaiyuda.com
-      url: "mailto:kyd@kuaiyuda.com", 
+      url: emailUrl, 
       colorCls: "hover:bg-[#EA4335]" // Standard Mail Red (or match your brand)
     },
     {

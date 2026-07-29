@@ -2,6 +2,7 @@ import { getLocale } from "next-intl/server";
 import getCategoriesWithSlug from "../../../lib/getCategoriesWithSlug";
 import Link from "next/link";
 import { MdSearch, MdKeyboardArrowRight, MdPhone, MdEmail, MdCategory } from "react-icons/md";
+import SafeEmailLink from "../../Shared/SafeEmailLink";
 
 const CategorySidebar = async ({ slug }) => {
     const allCategories = await getCategoriesWithSlug();
@@ -83,10 +84,10 @@ const CategorySidebar = async ({ slug }) => {
                         <MdPhone className="group-hover:scale-110 transition-transform" />
                         <span>Call Us</span>
                     </a>
-                    <a href="mailto:kyd@kuaiyuda.com" className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#064a9b] text-white rounded-xl font-bold text-sm shadow-md hover:bg-[#053a7a] hover:shadow-lg transition-all">
+                    <SafeEmailLink className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#064a9b] text-white rounded-xl font-bold text-sm shadow-md hover:bg-[#053a7a] hover:shadow-lg transition-all">
                         <MdEmail />
                         <span>Email Us</span>
-                    </a>
+                    </SafeEmailLink>
                 </div>
             </div>
 

@@ -14,5 +14,10 @@ export async function getUserLocale() {
 
 export async function setUserLocale(locale: Locale) {
   const cookieStore = await cookies();
-  cookieStore.set(COOKIE_NAME, locale);
+  cookieStore.set(COOKIE_NAME, locale, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'strict',
+    path: '/',
+  });
 }

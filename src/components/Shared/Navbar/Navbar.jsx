@@ -16,6 +16,7 @@ import { BsTelephonePlus } from "react-icons/bs";
 import SubMenuBar from "./SubMenuBar";
 import SubMenuForMobile from "./SubMenuForMobile";
 import LocaleSwitcher from "../LanguageSwitcher/LocaleSwitcher";
+import SafeEmailLink from "../SafeEmailLink";
 import { useTranslations } from "next-intl";
 import MenuLink from "./MenuLink";
 
@@ -75,15 +76,14 @@ const Navbar = ({ allCategories, locale }) => {
               </span>
               <span>+86-13902617335</span>
             </a>
-            <a
-              href="mailto:kyd@kuaiyuda.com"
+            <SafeEmailLink
               className="flex text-sm hover:underline hover:text-red-600 transition items-center gap-2 text-white"
             >
               <span className="">
                 <TfiEmail />
               </span>
-              <span>kyd@kuaiyuda.com</span>
-            </a>
+              <SafeEmailLink textOnly={true} />
+            </SafeEmailLink>
           </div>
           <div className="flex items-center justify-end gap-3">
             <span className="text-white text-sm">{t("NabTop.social")} :</span>

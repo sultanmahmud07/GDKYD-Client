@@ -75,6 +75,7 @@ const VideoCard = ({ src, delay = 0 }) => {
           title="Featured Video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
           onLoad={() => setIsLoaded(true)} // Triggers fade-in when ready
         ></iframe>
 
